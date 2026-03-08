@@ -24,6 +24,9 @@
             --esp-tools-button-color: #3b82f6;
             --esp-tools-button-text-color: #ffffff;
         }
+        .logo-glow {
+            filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.5));
+        }
     </style>
 </head>
 <body class="min-h-screen flex items-center justify-center p-6">
@@ -34,11 +37,17 @@
         
         <header class="mb-10">
             <div class="flex justify-center mb-6">
-                <div class="w-20 h-20 bg-blue-600 rounded-3xl flex items-center justify-center shadow-2xl shadow-blue-500/40">
-                    <span class="text-4xl font-black italic text-white select-none">G</span>
+                <!-- Noul Logo G.jpg cu fallback și efect de glow -->
+                <div class="w-24 h-24 relative">
+                    <img 
+                        src="G.jpg" 
+                        alt="GLYPH Logo" 
+                        class="w-full h-full object-contain rounded-2xl logo-glow"
+                        onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-20 h-20 bg-blue-600 rounded-3xl flex items-center justify-center shadow-2xl shadow-blue-500/40\'><span class=\'text-4xl font-black italic text-white select-none\'>G</span></div>';"
+                    >
                 </div>
             </div>
-            <h1 class="text-4xl font-black tracking-tighter mb-2">GLYPH <span class="text-blue-500">Installer</span></h1>
+            <h1 class="text-4xl font-black tracking-tighter mb-2 uppercase">GLYPH <span class="text-blue-500 text-3xl font-light">Installer</span></h1>
             <p class="text-slate-400 font-medium uppercase tracking-widest text-[10px]">Tactical Operating System v9.87</p>
         </header>
 
@@ -65,9 +74,9 @@
 
         <div class="flex flex-col items-center gap-6">
             <esp-web-install-button manifest="manifest.json">
-                <button slot="activate" class="bg-blue-600 hover:bg-blue-500 text-white font-black py-5 px-14 rounded-full transition-all transform hover:scale-105 active:scale-95 shadow-2xl shadow-blue-600/20 flex items-center gap-3 text-lg">
+                <button slot="activate" class="bg-blue-600 hover:bg-blue-500 text-white font-black py-5 px-14 rounded-full transition-all transform hover:scale-105 active:scale-95 shadow-2xl shadow-blue-600/20 flex items-center gap-3 text-lg uppercase tracking-tight">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                    INSTALL GLYPH OS
+                    Flash GLYPH OS
                 </button>
                 <span slot="unsupported" class="text-red-400 text-sm font-bold">Your browser does not support Web Serial. Please use Chrome on a PC.</span>
             </esp-web-install-button>
