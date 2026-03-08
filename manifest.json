@@ -1,0 +1,13 @@
+{
+  "name": "GLYPH Tactical System",
+  "version": "9.86",
+  "home_ui_button": "https://github.com/numele-tau/proiect-glyph",
+  "builds": [
+    {
+      "chipFamily": "ESP32-S3",
+      "parts": [
+        { "path": "firmware.bin", "offset": 65536 }
+      ]
+    }
+  ]
+}
