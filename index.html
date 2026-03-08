@@ -25,29 +25,34 @@
             --esp-tools-button-text-color: #ffffff;
         }
         .logo-glow {
-            filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.5));
+            filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.4));
         }
     </style>
 </head>
 <body class="min-h-screen flex items-center justify-center p-6">
 
     <div class="max-w-xl w-full glass-card rounded-[3rem] p-10 text-center relative overflow-hidden">
-        <!-- Glow effect -->
         <div class="absolute -top-24 -left-24 w-48 h-48 bg-blue-600/20 blur-[100px] rounded-full"></div>
         
         <header class="mb-10">
-            <div class="flex justify-center mb-6">
-                <!-- Noul Logo G.jpg cu fallback și efect de glow -->
-                <div class="w-24 h-24 relative">
-                    <img 
-                        src="G.jpg" 
-                        alt="GLYPH Logo" 
-                        class="w-full h-full object-contain rounded-2xl logo-glow"
-                        onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-20 h-20 bg-blue-600 rounded-3xl flex items-center justify-center shadow-2xl shadow-blue-500/40\'><span class=\'text-4xl font-black italic text-white select-none\'>G</span></div>';"
-                    >
+            <div class="flex justify-center mb-8">
+                <div class="w-32 h-32 relative logo-glow bg-black rounded-full p-1 border border-slate-800 flex items-center justify-center">
+                    <svg viewBox="0 0 500 500" class="w-24 h-24" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="white">
+                            <path d="M250,50 C139.5,50 50,139.5 50,250 C50,360.5 139.5,450 250,450 C330,450 398,403 430,335 L360,335 C335,375 295,400 250,400 C167,400 100,333 100,250 C100,167 167,100 250,100 C290,100 325,115 352,142 L410,85 C370,45 315,20 250,50 Z" />
+                            <rect x="300" y="230" width="130" height="40" />
+                            <path d="M250,160 L285,250 L250,340 L215,250 Z" transform="rotate(45, 250, 250)" />
+                            <circle cx="250" cy="250" r="18" fill="black" />
+                            <circle cx="250" cy="250" r="12" fill="white" />
+                        </g>
+                        <rect x="245" y="50" width="10" height="30" fill="white" opacity="0.5" />
+                        <rect x="245" y="420" width="10" height="30" fill="white" opacity="0.5" />
+                        <rect x="50" y="245" width="30" height="10" fill="white" opacity="0.5" />
+                    </svg>
                 </div>
             </div>
-            <h1 class="text-4xl font-black tracking-tighter mb-2 uppercase">GLYPH <span class="text-blue-500 text-3xl font-light">Installer</span></h1>
+
+            <h1 class="text-4xl font-black tracking-tighter mb-2 uppercase italic">GLYPH <span class="text-blue-500 font-light not-italic">Installer</span></h1>
             <p class="text-slate-400 font-medium uppercase tracking-widest text-[10px]">Tactical Operating System v9.87</p>
         </header>
 
@@ -78,10 +83,9 @@
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                     Flash GLYPH OS
                 </button>
-                <span slot="unsupported" class="text-red-400 text-sm font-bold">Your browser does not support Web Serial. Please use Chrome on a PC.</span>
+                <span slot="unsupported" class="text-red-400 text-sm font-bold">Web Serial not supported. Use Chrome on PC.</span>
             </esp-web-install-button>
-            
-            <p class="text-[9px] text-slate-500 font-bold uppercase tracking-[0.2em]">Secure Build & Performance Optimized</p>
+            <p class="text-[9px] text-slate-500 font-bold uppercase tracking-[0.2em]">Secure Build & Optimized for LilyGo T3 S3</p>
         </div>
 
         <footer class="mt-12 pt-8 border-t border-slate-800/50 text-[10px] text-slate-600 font-bold uppercase tracking-widest">
