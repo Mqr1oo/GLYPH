@@ -36,7 +36,7 @@ Interconnect: 5x Flexible Qwiic Cables - 5cm (SKU: SPF-19153).
 
 Power: Samsung INR18650-35E 3400mAh Li-Ion + 18650 Cell holder with JST 2-pin cable.
 
-Storage: 8GB or 16GB MicroSD (FAT32). High-speed cards are NOT required; standard reliability is preferred.
+Targeted Storage: 8GB or 16GB MicroSD (FAT32). High-speed cards are NOT required; standard reliability is preferred.
 
 💰 Estimated Total Build Cost
 
@@ -58,7 +58,7 @@ Deploy GLYPH OS instantly via our browser-based tactical installer:
 
 Connect your LilyGo T3 S3 to your PC via USB.
 
-Open glyph.systems/install in Chrome or Edge.
+Open mqr1oo.github.io/GLYPH/ in Chrome or Edge.
 
 Click FLASH GLYPH OS.
 
