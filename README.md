@@ -28,21 +28,21 @@ Total Estimated Build Cost: €140 - €190
 
 ⚡ Solderless Build: The coolest part about this project is that you can assemble the entire system in a single afternoon. No soldering is required—everything is connected via the Qwiic/Modulino plug-and-play ecosystem.
 
-Mainboard: LilyGo T3 S3 E-Paper (ESP32-S3, LoRa 868/915MHz, 2.13" E-Ink) — €45
+Mainboard: LilyGo T3 S3 E-Paper (ESP32-S3, LoRa 868/915MHz, 2.13" E-Ink) 
 
-GNSS Module: SparkFun GPS-15210 (u-blox SAM-M8Q + Qwiic PCB Antenna) — €40
+GNSS Module: SparkFun GPS-15210 (u-blox SAM-M8Q + Qwiic PCB Antenna)
 
-Motion/IMU: LSM6DS3TR-C (6-Axis Accel/Gyro + Magnetometer) — €15
+Motion/IMU: LSM6DS3TR-C (6-Axis Accel/Gyro + Magnetometer)
 
-Environmental: Adafruit 4885 (Sensirion SHT40 High Precision) — €10
+Environmental: Adafruit 4885 (Sensirion SHT40 High Precision)
 
-Interface: Arduino Modulino (3x Tactical Mechanical Buttons) — €20
+Interface: Arduino Modulino (3x Tactical Mechanical Buttons)
 
-Connectivity: SparkFun PRT-17259 (5x Flexible Qwiic Cables 5cm) — €10
+Connectivity: SparkFun PRT-17259 (5x Flexible Qwiic Cables 5cm) 
 
-Power: Samsung INR18650-35E (3400mAh High-Capacity Li-Ion Cell) — €10
+Power: Samsung INR18650-35E (3400mAh High-Capacity Li-Ion Cell) 
 
-Enclosure: Tactical Shell (3D Printed TPU Shockproof + PETG-CF) — €20
+Enclosure: Tactical Shell (TPU & PETG-CF/PETG) 
 
 🚀 Future Roadmap
 
