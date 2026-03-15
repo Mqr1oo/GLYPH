@@ -1,71 +1,177 @@
-🛡️ GLYPH Tactical OS (v9.87)
+🛡️ GLYPH: Offline Maps. Online Safety.
 
-"Stay connected when the grid goes dark."
+"Start your journey, track your path, and always find your way back home."
 
-GLYPH is a high-performance, off-grid tactical operating system designed for the LilyGo T3 S3 (ESP32-S3). It transforms a simple LoRa development board into a robust communication and navigation powerhouse, built for survivors, hikers, and tactical enthusiasts who operate beyond the signal.
+GLYPH is a professional-grade decentralized tactical navigation and communication framework. It is engineered for explorers, hikers, and search-and-rescue teams operating in "Black Zones"—environments where GSM signals are non-existent and traditional connectivity fails.
 
-📍 The Heart of GLYPH: Live Breadcrumbs Engine
+🧭 The Mission: Resilient Navigation
 
-The core of v9.87 is our Proprietary Breadcrumbs System. Unlike standard GPS loggers, GLYPH is designed for high-stress tactical environments where accuracy and autonomy are non-negotiable.
+In remote wilderness, losing your orientation isn't just an inconvenience—it's a critical risk. GLYPH solves this by providing a reliable Breadcrumb Tracking system and a robust Off-Grid Communication link that operates independently of cellular towers or expensive satellite subscriptions.
 
-Zero-Data Navigation: Real-time path tracking with 100% offline processing. No maps, no internet—just pure mathematics.
+Core Philosophy
 
-Haversine Precision: Uses the Haversine formula for spherical distance calculation, ensuring sub-meter accuracy even over long-distance tactical maneuvers.
+Breadcrumb Reliability: High-precision path logging from the very first step.
 
-Smart Anti-Drift Filter: Integrated IMU logic (LSM6DS3) detects when you are stationary via accelerometer. If you stop, GPS logging pauses, preventing "coordinate drift" from ruining your stats.
+Secure LoRa Mesh: Encrypted peer-to-peer messaging for team coordination.
 
-Dynamic Scaling (Auto-Fit): The Map UI automatically calculates the bounds of your entire route, fitting it perfectly to the 2.13" E-Paper screen regardless of trip length.
+Tactical Hardware: Sunlight-readable E-Ink display with extreme battery longevity.
 
-KML Export: Every journey is saved as a structured .KML file on the SD card, ready for Google Earth or ATAK analysis.
+Zero Infrastructure: Works anywhere on the planet, completely decentralized.
 
-🛠️ Bill of Materials (Complete Hardware Stack)
+🚀 Key Modules (Tactical OS v9.50)
 
-To build a GLYPH unit with 100% compatibility, we use the following professional-grade components:
+1. Advanced Breadcrumb Tracking 🗺️
 
-Mainframe: LilyGo T3 S3 (ESP32-S3 + LoRa + 2.13" E-Paper).
+Unlike standard GPS trackers that suffer from "signal bounce," GLYPH uses an IMU-Driven Anti-Drift Filter.
 
-GPS Module: SparkFun GPS-15210 (SAM-M8Q) with Qwiic interface (SKU: SPF-14403).
+Movement Awareness: Using the LSM6DS3TR-C, the system knows if you are actually walking or standing still.
 
-IMU Sensor: Adafruit 4503 (LSM6DS3TR-C) 6-DoF Accelerometer & Gyro (SKU: ADA-21828).
+Anti-Drift Logic: If no steps are detected for 60 seconds, the system ignores GPS jitter, ensuring your traveled distance is 100% accurate.
 
-Atmospheric Sensor: Sensirion SHT40 (Adafruit 4885) - Temp & Humidity (SKU: ADA-19254).
+KML Visualization: Routes are exported as 3D .KML files, ready for Google Earth analysis.
 
-Input: Arduino Modulino Buttons (ABX00110) - 3-button interactive module.
+2. Off-Grid Communication 📡
 
-Interconnect: 5x Flexible Qwiic Cables - 5cm (SKU: SPF-19153).
+GLYPH turns your device into a tactical radio node.
 
-Power: Samsung INR18650-35E 3400mAh Li-Ion + 18650 Cell holder with JST 2-pin cable.
+Dual-Band Support: Configurable for 868MHz (EU) or 915MHz (US).
 
-Targeted Storage: 8GB or 16GB MicroSD (FAT32). High-speed cards are NOT required; standard reliability is preferred.
+Team Radar: Every transmitted message invisibly carries your GPS coordinates. Teammates can see your exact distance and bearing on their HUD.
 
-💰 Estimated Total Build Cost
+Secure Link: Instant switching between PUBLIC (unencrypted) and SECURE (AES-style encryption based on your Team Name).
 
-The total cost for all components listed above, including the LilyGo T3 S3 board, is approximately €135 - €140.
+3. Bionic Sleep Engine 🔋
 
-🏗️ 3D Printing & Industrial Design
+Energy management is critical for survival.
 
-GLYPH is optimized for the Bambu Lab ecosystem and technical filaments:
+80MHz Optimization: The ESP32-S3 CPU is clocked at 80MHz to balance a fluid UI with ultra-low power draw.
 
-Recommended Filament: The original tactical chassis is printed using PETG-CF (Carbon Fiber) for its superior rigidity and premium matte finish.
+Wake-on-Motion: The device enters deep sleep when stationary but wakes up instantly the moment you pick it up.
 
-Standard Compatibility: If PETG-CF is not available, standard PETG works perfectly and offers excellent outdoor durability.
+🛠️ Hardware & Bill of Materials (BOM)
 
-AMS Optimized: The logo and tactical markings are designed for multi-color printing using the Bambu Lab AMS system.
+The project utilizes high-end modular components for laboratory-grade reliability.
 
-💾 One-Click Installation
+Total Build Cost: €140 - €190
 
-Deploy GLYPH OS instantly via our browser-based tactical installer:
+Category
 
-Connect your LilyGo T3 S3 to your PC via USB.
+Component
 
-Open mqr1oo.github.io/GLYPH/ in Chrome or Edge.
+Part Number / Specification
 
-Click FLASH GLYPH OS.
+Mainboard
 
-⚖️ License & Copyright
+LilyGo T3 S3 E-Paper
 
-Copyright (c) 2026 glyph.systems. All rights reserved.
+LoRa 868MHz / 915MHz
 
-This software and its related hardware designs are provided under a proprietary license. Unauthorized copying, modification, redistribution, or commercial use is strictly prohibited.
+GNSS Module
 
-Developed with precision for those who explore beyond the signal.
+SparkFun GPS-15210
+
+SAM-M8Q + Qwiic PCB Antenna
+
+Motion/IMU
+
+LSM6DS3TR-C + LIS3MDL
+
+6-Axis Accel/Gyro + Magnetometer
+
+Environmental
+
+Adafruit 4885
+
+Sensirion SHT40 (Temp/Hum)
+
+Interface
+
+Arduino Modulino
+
+Tactile Buttons (A, B, C)
+
+Connectivity
+
+SparkFun PRT-17259
+
+5x Flexible Qwiic Cables (5cm)
+
+Power
+
+Samsung INR18650-35E
+
+3400mAh Li-Ion Cell
+
+Enclosure
+
+3D Printed
+
+TPU (Shockproof) + PETG/PETG-CF
+
+📊 Operational Profiles
+
+Mode
+
+CPU Speed
+
+GPS Rate
+
+BLE / Radio
+
+NORMAL
+
+80 MHz
+
+1.0 Hz (1s)
+
+ALL ACTIVE
+
+ECO
+
+40 MHz
+
+0.1 Hz (10s)
+
+Radio Active / BLE Off
+
+STEALTH
+
+40 MHz
+
+0.1 Hz (10s)
+
+ALL RADIOS OFF
+
+📱 The Command Center: Tactical Web Dashboard
+
+GLYPH bridges the gap between rugged hardware and modern smartphones. Our custom web interface serves as your interactive ground station, allowing for real-time data visualization and fluid communication.
+
+1. Unified Launch Hub
+
+By accessing the main URL, you enter the GLYPH Hub—a central gateway that lets you choose between the Tactical Dashboard for operations or the Firmware Flasher for maintenance.
+
+2. Zero-Latency Wireless Teletype
+
+Forget tiny buttons for complex messages.
+
+Real-time Input: Use your smartphone's native keyboard to type long messages.
+
+Instant Sync: As you type on your phone, the text appears character-by-character on the GLYPH E-Ink display, thanks to a high-speed BLE UART link.
+
+One-Tap TX: Send your message to the LoRa mesh instantly from your screen.
+
+3. Live Vital HUD
+
+The dashboard provides a high-contrast, military-grade HUD that displays live data fetched directly from the hardware sensors:
+
+GPS Fix Status: Real-time latitude and longitude updates.
+
+Power Diagnostics: Accurate battery percentage monitoring.
+
+Secure Link Feed: A specialized chat window that color-codes incoming (RX) and outgoing (TX) Lora messages, keeping your operational log organized.
+
+4. PWA Installation (Offline Mode)
+
+The dashboard is a Progressive Web App. Once you open the link with internet, you can "Add to Home Screen." It will then save itself to your phone's memory, allowing you to open the full interface in the middle of a forest with Zero Cellular Data.
+
+Engineered by MQR1OO // Tactical Connectivity for the Modern Explorer
