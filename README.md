@@ -70,4 +70,4 @@ Connect: Click "Connect", select GLYPH, and start transmitting.
 
 GLYPH OS uses a salt-based XOR encryption for "Secure Mode" messaging. While effective for tactical obfuscation in the field, it is intended for non-critical coordination. For mission-critical security, future updates will explore hardware-accelerated AES-256.
 
-Developed by GLYPH Labs. Efficiency. Resilience. Stealth.
+Developed by GLYPH SYSTEMS. Efficiency. Resilience. Stealth.
