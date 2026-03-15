@@ -1,4 +1,4 @@
-GLYPH OS: Tactical E-Ink Operating System
+GLYPH OS - Beyond the Signal
 
 Version 10.05 - Native BLE Integration
 
@@ -20,11 +20,13 @@ Ultra-Low Power: Bionic Sleep engine with Deep/Light sleep modes and IMU-based w
 
 Native BLE UART: Professional integration with the Nordic UART Service (NUS) for real-time telemetry and remote control.
 
-Multilingual Interface: Support for 10 languages with a UI optimized for < 25 character tactical brevity.
+Multilingual Interface: Support for 10 languages with a UI optimized for tactical brevity (< 25 characters).
 
 🛠️ Bill of Materials (BOM)
 
 Total Estimated Build Cost: €140 - €190
+
+⚡ Solderless Build: The coolest part about this project is that you can assemble the entire system in a single afternoon. No soldering is required—everything is connected via the Qwiic/Modulino plug-and-play ecosystem.
 
 Mainboard: LilyGo T3 S3 E-Paper (ESP32-S3, LoRa 868/915MHz, 2.13" E-Ink) — €45
 
