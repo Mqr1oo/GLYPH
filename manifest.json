@@ -1,0 +1,9 @@
+{
+  "name": "GLYPH Tactical Dashboard",
+  "short_name": "GLYPH",
+  "start_url": "./glyph.html",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "orientation": "portrait"
+}
