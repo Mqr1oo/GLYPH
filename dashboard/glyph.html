@@ -289,7 +289,7 @@
                     Start/Stop REC
                     <span>[BTN A + B]</span>
                 </button>
-                <button class="btn-action" onclick="pressBtn('AC@')">
+                <button class="btn-action" onclick="confirmSOS()">
                     Broadcast SOS
                     <span>[BTN A + C]</span>
                 </button>
@@ -603,6 +603,14 @@
 
     function pressBtn(comboCode) { 
         sendCmd(comboCode); 
+    }
+
+    function confirmSOS() {
+        showConfirm(
+            "Broadcast SOS", 
+            "Are you sure you want to broadcast an SOS signal?<br><br><span style='color: var(--danger); font-weight: bold;'>Please confirm.</span>", 
+            () => { pressBtn('AC@'); }
+        );
     }
 
     // PWA Init
