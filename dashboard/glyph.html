@@ -369,6 +369,7 @@
 
     // --- STATE VARIABLES ---
     let isSecureMode = false;
+    let recentTxMessages = []; // Memorează mesajele trimise pentru a filtra ecoul de la hardware
 
     // --- BLUETOOTH & BACKGROUND SYNC ---
     const bleServiceUUID = '6e400001-b5a3-f393-e0a9-e50e24dcca9e';
@@ -473,6 +474,15 @@
             return;
         }
         
+        // --- FILTRU ANTI-ECOU PENTRU MESAJE PROPRII ---
+        // Dacă mesajul care se întoarce conține textul trimis de noi și indicativul "tx", îl ascundem
+        for (let i = 0; i < recentTxMessages.length; i++) {
+            if (val.includes(recentTxMessages[i]) && val.toLowerCase().includes("tx")) {
+                recentTxMessages.splice(i, 1); // Eliminăm din memorie pt a nu bloca mesaje identice de la colegi
+                return; // Ne oprim aici, NU mai afișăm mesajul pe partea stângă
+            }
+        }
+
         // Chat Message (RX)
         appendMsg(val, 'rx');
         if (document.visibilityState === 'hidden' && Notification.permission === 'granted') {
@@ -501,8 +511,11 @@
     // --- USER ACTIONS ---
     function sendTextInput() {
         const inp = document.getElementById('msg-input');
-        if (inp.value.trim() && sendCmd(inp.value)) {
-            appendMsg(inp.value, 'tx');
+        const text = inp.value.trim();
+        if (text && sendCmd(text)) {
+            appendMsg(text, 'tx');
+            recentTxMessages.push(text);
+            if (recentTxMessages.length > 10) recentTxMessages.shift(); // Păstrăm în istoric doar ultimele 10
             inp.value = '';
         }
     }
