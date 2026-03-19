@@ -485,8 +485,16 @@
 
         // Chat Message (RX)
         appendMsg(val, 'rx');
-        if (document.visibilityState === 'hidden' && Notification.permission === 'granted') {
-            new Notification("GLYPH Message", { body: val, icon: 'icon-192.png' });
+        
+        // Vibrează scurt când primești un mesaj (dacă e suportat de dispozitiv)
+        if (navigator.vibrate) navigator.vibrate(200);
+
+        // Notificare de tip Push
+        if ('Notification' in window && Notification.permission === 'granted') {
+            // Trimitem notificarea doar dacă aplicația este în fundal
+            if (document.visibilityState === 'hidden') {
+                new Notification("GLYPH", { body: val, icon: 'icon-192.png' });
+            }
         }
     }
 
