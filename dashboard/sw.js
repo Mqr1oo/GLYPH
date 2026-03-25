@@ -1,7 +1,9 @@
 const CACHE_NAME = 'glyph-v2';
 const ASSETS = [
-  './glyph.html',
-  './manifest.json'
+  './',
+  './glyph.html',     
+  './manifest.json',
+  './icon-192.png'    // Foarte important să fie aici pentru notificări/offline
 ];
 
 self.addEventListener('install', (e) => {
