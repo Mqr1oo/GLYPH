@@ -3,7 +3,7 @@ const ASSETS = [
   './',
   './glyph.html',     
   './manifest.json',
-  './icon-192.png'    // Foarte important să fie aici pentru notificări/offline
+  './icon-192.png'    
 ];
 
 self.addEventListener('install', (e) => {
