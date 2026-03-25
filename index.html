@@ -1,78 +1,148 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GLYPH HUB</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap');
+
+        :root {
+            --bg: #050505;
+            --surface: #121214;
+            --border: #2a2a2d;
+            --accent: #0a84ff;
+            --text-main: #f2f2f2;
+            --text-muted: #8e8e93;
+            --success: #32d74b;
+        }
 
         body {
-            background-color: #050505;
-            color: #00ffff;
-            font-family: 'Rajdhani', sans-serif;
+            background-color: var(--bg);
+            /* Subtle top highlight for depth */
+            background-image: radial-gradient(circle at 50% 0%, #1a1a1f 0%, transparent 70%);
+            color: var(--text-main);
+            font-family: 'Inter', -apple-system, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
-            text-transform: uppercase;
             overflow: hidden;
         }
 
         .container {
             text-align: center;
-            border: 2px solid #324585;
-            padding: 40px;
-            background: #121212;
-            border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 48px 40px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 400px;
+            /* Smooth entrance animation */
+            animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         h1 {
-            letter-spacing: 5px;
-            margin-bottom: 30px;
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 28px;
+            letter-spacing: 2px;
+            margin: 0 0 8px 0;
+            color: var(--text-main);
+        }
+
+        .subtitle {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+            font-weight: 500;
         }
 
         .menu-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
         }
 
         .btn {
             text-decoration: none;
-            color: #00ffff;
-            border: 1px solid #00ffff;
-            padding: 15px 30px;
-            font-weight: 700;
-            transition: 0.3s;
-            display: block;
-            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            padding: 16px 24px;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
-        .btn:hover {
-            background: #00ffff;
-            color: #000;
-            box-shadow: 0 0 15px #00ffff;
+        .btn.primary {
+            background: var(--accent);
+            color: #fff;
+            border: 1px solid transparent;
+            box-shadow: 0 4px 15px rgba(10, 132, 255, 0.2);
+        }
+
+        .btn.primary:hover {
+            background: #007aff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(10, 132, 255, 0.35);
         }
 
         .btn.secondary {
-            border-color: #324585;
-            color: #888;
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border);
         }
         
         .btn.secondary:hover {
-            background: #324585;
-            color: #fff;
+            background: rgba(255, 255, 255, 0.05);
+            border-color: #444;
+            transform: translateY(-2px);
         }
 
         .footer {
-            margin-top: 20px;
-            font-size: 10px;
-            color: #444;
+            margin-top: 40px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Blinking status dot */
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--success);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--success);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.4; box-shadow: 0 0 2px var(--success); }
+            50% { opacity: 1; box-shadow: 0 0 10px var(--success); }
+            100% { opacity: 0.4; box-shadow: 0 0 2px var(--success); }
         }
     </style>
 </head>
@@ -80,11 +150,22 @@
 
 <div class="container">
     <h1>GLYPH OS</h1>
+    <div class="subtitle">CORE SYSTEM HUB</div>
+    
     <div class="menu-grid">
-        <a href="dashboard/glyph.html" class="btn">TACTICAL DASHBOARD</a>
-        <a href="flasher/" class="btn secondary">FIRMWARE FLASHER</a>
+        <!-- Am lăsat link-urile tale originale -->
+        <a href="dashboard/glyph.html" class="btn primary">
+            TACTICAL DASHBOARD
+        </a>
+        <a href="flasher/" class="btn secondary">
+            FIRMWARE FLASHER
+        </a>
     </div>
-    <p class="footer">STARE SISTEM: OPERAȚIONAL</p>
+    
+    <div class="footer">
+        <div class="status-dot"></div>
+        SYSTEM STATUS: OPERATIONAL
+    </div>
 </div>
 
 </body>
