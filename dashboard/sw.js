@@ -1,4 +1,4 @@
-const CACHE_NAME = 'glyph-v3';
+const CACHE_NAME = 'GLYPH';
 const ASSETS = [
   './',
   './glyph.html',
