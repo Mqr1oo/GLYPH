@@ -303,11 +303,11 @@
                 </button>
                 <button class="btn-action" onclick="confirmSOS()">
                     Broadcast SOS
-                    <span>[BTN A + C]</span>
-                </button>
-                <button class="btn-action" onclick="pressBtn('BC@')">
-                    Reboot System
                     <span>[BTN B + C]</span>
+                </button>
+                <button class="btn-action" onclick="confirmShutdown()">
+                    Shutdown System
+                    <span>[BTN A + C]</span>
                 </button>
             </div>
         </div>
@@ -703,6 +703,14 @@
         showConfirm(
             "Broadcast SOS", 
             "Are you sure you want to broadcast an SOS signal?<br><br><span style='color: var(--danger); font-weight: bold;'>Please confirm.</span>", 
+            () => { pressBtn('BC@'); }
+        );
+    }
+
+    function confirmShutdown() {
+        showConfirm(
+            "Shutdown System", 
+            "Are you sure you want to shutdown the system?<br><br><span style='color: var(--danger); font-weight: bold;'>Connection will be lost.</span>", 
             () => { pressBtn('AC@'); }
         );
     }
