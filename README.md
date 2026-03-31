@@ -1,73 +1,117 @@
-GLYPH OS - Beyond the Signal
+GLYPH OS
 
-Version 10.05 - Native BLE Integration
+Beyond the Signal: Tactical Communication & Navigation
 
-GLYPH OS is a lightweight, high-performance tactical operating system designed for the LilyGo T3 S3 E-Paper platform. It provides off-grid communication, real-time navigation, and environmental monitoring in a low-power, high-visibility package.
+An ESP32-based hybrid OS built for tactical operations, extreme trekking, and survival. Delivers military-grade encrypted LoRa messaging, offline GNSS navigation, and real-time team tracking on an ultra-low-power E-Ink display.
 
-By leveraging WebBluetooth, GLYPH OS synchronizes seamlessly with a mobile web interface without requiring dedicated apps, allowing for secure field operations using only a browser.
+📑 Table of Contents
 
-🛰️ Key Features
+🔥 Core Capabilities
 
-Tactical Mapping: KML overlay support via SD Card with breadcrumb tracking and distance calculation.
+🥷 Stealth & Survivability
 
-Off-Grid Messaging: Long-range LoRa communication with support for Secure (AES-like XOR) and Public channels.
+🧰 Hardware & Components
 
-Team Radar: Real-time location sharing and distance tracking for up to 5 teammates.
+💻 Installation & Setup
 
-Environmental Suite: Precision sensing (Temp/Hum) with active SHT40 heater control for anti-condensation in extreme environments.
+🆘 Emergency & Connectivity
 
-Ultra-Low Power: Bionic Sleep engine with Deep/Light sleep modes and IMU-based wake-up.
+🔥 Core Capabilities
 
-Native BLE UART: Professional integration with the Nordic UART Service (NUS) for real-time telemetry and remote control.
+🗺️ Offline Tactical Map & Navigation
 
-Multilingual Interface: Support for 10 languages with a UI optimized for tactical brevity (< 25 characters).
+Live Breadcrumbs: Real-time route drawing with advanced GPS noise filtering (only records true movement > 20cm).
 
-🛠️ Bill of Materials (BOM)
+KML Overlays: Load pre-planned tactical routes directly from the SD card.
 
-Total Estimated Build Cost: €140 - €190
+Live Telemetry: Pinpoint accurate distance and altitude tracking, featuring 3 dynamic zoom levels.
 
-⚡ Solderless Build: The coolest part about this project is that you can assemble the entire system in a single afternoon. No soldering is required—everything is connected via the Qwiic/Modulino plug-and-play ecosystem.
+📡 Encrypted LoRa Messenger
 
-Mainboard: LilyGo T3 S3 E-Paper (ESP32-S3, LoRa 868/915MHz, 2.13" E-Ink) 
+Military-Grade Security: AES-256-CBC encryption. Keys are dynamically generated via SHA-256 hashing of your Team Name to prevent unauthorized interception.
 
-GNSS Module: SparkFun GPS-15210 (u-blox SAM-M8Q + Qwiic PCB Antenna)
+Invisible Geolocation: Automatically attaches your hidden GPS coordinates to every transmitted message.
 
-Motion/IMU: LSM6DS3TR-C (6-Axis Accel/Gyro + Magnetometer)
+Smart Input: Type directly using the rugged 3-button physical interface, or pair via Bluetooth to use your smartphone's keyboard.
 
-Environmental: Adafruit 4885 (Sensirion SHT40 High Precision)
+👥 Team Radar
 
-Interface: Arduino Modulino (3x Tactical Mechanical Buttons)
+Live Squad Tracking: Monitor up to 5 team members simultaneously on your screen.
 
-Connectivity: SparkFun PRT-17259 (5x Flexible Qwiic Cables 5cm) 
+Auto-Extraction: Automatically parses coordinates from incoming LoRa chatter to update squad positions on your radar without manual input.
 
-Power: Samsung INR18650-35E (3400mAh High-Capacity Li-Ion Cell) 
+Status Monitoring: Built-in "Last Seen" timestamps calculate the age and reliability of teammate locations.
 
-Enclosure: Tactical Shell (TPU & PETG-CF/PETG) 
+🥷 Stealth & Survivability
 
-🚀 Future Roadmap
+GLYPH OS is built to survive extended missions with a dynamic power engine:
 
-[ ] LoRa Mesh Integration: Implementation of multi-hop mesh networking for extended range.
+STEALTH Mode: Complete radio silence (Zero TX/RX emissions). GPS updates only every 50 seconds. Electronically undetectable.
 
-[ ] ATAK Forwarder: Bridge functionality to forward LoRa packets to ATAK/CivTAK via BLE.
+ECO Mode: Balances long-range hiking with 10-second GPS intervals and active LoRa listening for maximum battery efficiency.
 
-[ ] On-Device GIS: Vector map rendering directly from SD card (simplified .map files).
+Anti-Ghosting E-Ink: Zero-glare, ultra-low power consumption display providing crisp visibility in direct sunlight.
 
-[ ] Solar Harvesting Logic: Dynamic CPU scaling based on real-time solar charging input.
+🧰 Hardware & Components
 
-[ ] Environmental AI: Barometric trend analysis for localized storm prediction.
+To build your own GLYPH device, you will need the following core modules:
 
-💻 Technical Setup
+Component
 
-Hardware: Connect sensors via the Qwiic I2C bus. Ensure the Radio and E-Paper pins are configured as per the glyph_os.ino header.
+Specification
 
-Firmware: Flash using Arduino IDE or PlatformIO. Required libraries: RadioLib, GxEPD, U8g2_for_Adafruit_GFX, SparkFun_u-blox_GNSS.
+Description
 
-Interface: Open the GLYPH Web Controller (HTML/JS) in a WebBluetooth compatible browser (Chrome/Edge/Bluefy).
+MCU
 
-Connect: Click "Connect", select GLYPH, and start transmitting.
+ESP32-S3 Dual-Core
 
-🛡️ Security
+Handles heavy cryptography and UI processing.
 
-GLYPH OS uses a salt-based XOR encryption for "Secure Mode" messaging. While effective for tactical obfuscation in the field, it is intended for non-critical coordination. For mission-critical security, future updates will explore hardware-accelerated AES-256.
+Display
 
-Developed by GLYPH SYSTEMS. Efficiency. Resilience. Stealth.
+2.13" E-Ink (GxEPD2)
+
+High-contrast, sunlight-readable screen.
+
+Radio
+
+SX1262 LoRa
+
+868MHz/915MHz with adjustable power (up to 22dBm).
+
+GNSS
+
+u-blox GNSS (I2C)
+
+Fast time-to-first-fix and high accuracy.
+
+Sensors
+
+LSM6DSOX + LIS3MDL
+
+6-Axis IMU and tilt-compensated compass.
+
+💻 Installation & Setup
+
+We recommend using PlatformIO for compiling and uploading the firmware.
+
+# 1. Clone the repository
+git clone https://github.com/your-username/glyph-os.git
+
+# 2. Navigate to the directory
+cd glyph-os
+
+# 3. Build and upload to the ESP32
+pio run -t upload
+
+
+Note: Ensure you have the RadioLib and GxEPD2 libraries installed if you choose to use the Arduino IDE instead of PlatformIO.
+
+🆘 Emergency & Connectivity
+
+Instant SOS Broadcast: A dedicated hardware button combo (B + C) instantly broadcasts a continuous SOS signal at maximum LoRa range (Spread Factor 12).
+
+BLE Tactical Modem: Connect via WebBluetooth to your smartphone. The device acts as an offline gateway, pushing telemetry and message notifications directly to your mobile browser—no cell network required.
+
+Black Box Logging: Automatically logs all movement as .KML routes and full telemetry data as .CSV to the SD card for post-mission analysis (natively compatible with ATAK and Google Earth).
