@@ -122,7 +122,7 @@ The revolutionary aspect? **It's entirely Plug & Play.** We designed GLYPH so th
 | **🌲 ECO** | 40 MHz | 10s | Active (SF11) | ~36h | Extended range patrols |
 | **🥷 STEALTH** | 40 MHz | 50s | **OFF** | ~7 days | Radio silence, zero emissions |
 
-*\* Based on 3000mAh 18650 Li-Ion battery.*
+*\* Based on 3400mAh 18650 Li-Ion battery.*
 
 **Deep Sleep Architecture**
 - Automatic sleep/wake based on motion detection (>1.2g deviation).
