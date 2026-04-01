@@ -104,13 +104,6 @@ The revolutionary aspect? **It's entirely Plug & Play.** We designed GLYPH so th
 - Team-based encryption (different teams = different keys).
 - Automatic GPS coordinates embedded in every message.
 
-**Spread Factor System**
-| Mode | SF | Range | Data Rate | Use Case |
-|------|----|----|-----------|----------|
-| Normal | SF11 | 2-5km | ~440 bps | Team comms |
-| SOS | SF12 | 10-20km+ | ~183 bps | Emergency broadcast |
-| Fast | SF7 | <500m | ~5.5 kbps | Close-range tactical |
-
 ### 👥 Team Radar
 
 **Live Squad Tracking**
