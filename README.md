@@ -18,8 +18,7 @@
 
 **Build your own off-grid military-grade communicator in under 45 minutes using standard Qwiic modules and a 3D printer. No soldering required.**
 
-[📥 Download](https://github.com/Mqr1oo/GLYPH/releases) • [📖 Documentation](#-documentation) • [🧰 Bill of Materials](#-hardware--bill-of-materials) • [🐛 Report Bug](https://github.com/Mqr1oo/GLYPH/security.md)
-
+ [📖 Documentation](#-documentation) • [🧰 Bill of Materials](#-hardware--bill-of-materials) • [🐛 Report Bug](https://github.com/Mqr1oo/GLYPH/blob/main/security.md)
 ---
 
 </div>
