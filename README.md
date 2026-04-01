@@ -148,15 +148,17 @@ We designed GLYPH to be accessible. Reliable communication shouldn't require exp
 
 All modules connect using standard Qwiic cables - zero soldering required.
 
-- LilyGO T3S3 E-Paper (868MHz or 915MHz) - ESP32-S3 with LoRa and E-Ink display integrated
-- SparkFun GNSS Breakout - SAM-M8Q (Qwiic) - GPS module
-- Adafruit LSM6DSOX + LIS3MDL (Qwiic) - 9-axis IMU with magnetometer
-- Adafruit SHT40 (Qwiic) - Temperature & humidity sensor
-- Arduino Modulino Buttons (Qwiic) - 3-button interface
-- 5× Qwiic cables (5cm) - Plug-and-play connections
-- 18650 Li-Ion battery (3400mAh, 3.7V) - Standard rechargeable cell
-- 18650 battery holder with screw terminals
-- ARK connector (3.5mm, 2-pin) or small screw terminal for power
+| Component | Description |
+|-----------|-------------|
+| **LilyGO T3S3 E-Paper** (868MHz or 915MHz) | ESP32-S3 with LoRa and E-Ink display integrated |
+| **SparkFun GNSS Breakout - SAM-M8Q** (Qwiic) | GPS module |
+| **Adafruit LSM6DSOX + LIS3MDL** (Qwiic) | 9-axis IMU with magnetometer |
+| **Adafruit SHT40** (Qwiic) | Temperature & humidity sensor |
+| **Arduino Modulino Buttons** (Qwiic) | 3-button interface |
+| **5× Qwiic cables** (5cm) | Plug-and-play connections |
+| **18650 Li-Ion battery** (3400mAh, 3.7V) | Standard rechargeable cell |
+| **18650 battery holder** | With screw terminals |
+| **ARK connector** (3.5mm, 2-pin) or screw terminal | For power connection |
 
 ### 2. The 3D Printed Enclosure - From Bambu Lab (~80 EURO)
 
