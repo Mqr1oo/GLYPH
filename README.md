@@ -44,7 +44,7 @@
   <img src="docs/images/messenger.jpg" width="31%" alt="Encrypted Messenger"/>
   <img src="docs/images/radar.jpg" width="31%" alt="Team Radar"/>
 </p>
----
+
 
 ## 🎯 Why GLYPH OS?
 
