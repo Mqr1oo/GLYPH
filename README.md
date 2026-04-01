@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🛰️ GLYPH OS
+# GLYPH
 
 ### Beyond the Signal: Tactical Communication & Navigation
 
