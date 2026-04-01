@@ -34,7 +34,7 @@
 
 > **Add your device photos here**
 > ![GLYPH Device Fully Assembled](docs/images/device.jpg)
-> ![Plug & Play Qwiic Internals](docs/images/device2.jpg)
+> ![Plug & Play Qwiic Internals](docs/images/qwiic.jpg)
 > ![Tactical Map Interface](docs/images/map.png)
 > ![Encrypted Messenger](docs/images/messenger.png)
 > ![Team Radar](docs/images/radar.png)
