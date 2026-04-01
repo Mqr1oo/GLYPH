@@ -5,13 +5,13 @@
 ### Beyond the Signal: Tactical Communication & Navigation
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Platform-ESP32--S3-blue?style=for-the-badge&logo=espressif" alt="ESP32-S3"/>
+  <img src="https://img.shields.io/badge/Hardware-ESP32--S3-blue?style=for-the-badge&logo=espressif" alt="ESP32-S3"/>
+  <img src="https://img.shields.io/badge/Framework-Arduino-00979D?style=for-the-badge&logo=Arduino&logoColor=white" alt="Arduino"/>
   <img src="https://img.shields.io/badge/Radio-LoRa_SX1262-green?style=for-the-badge" alt="LoRa"/>
   <img src="https://img.shields.io/badge/Security-AES--256--CBC-red?style=for-the-badge&logo=letsencrypt" alt="AES-256"/>
-  <img src="https://img.shields.io/badge/Display-E--Ink_2.13"-black?style=for-the-badge" alt="E-Ink"/>
-  <img src="https://img.shields.io/badge/Cores-Dual--Core-orange?style=for-the-badge" alt="Dual-Core"/>
+  <img src="https://img.shields.io/badge/Assembly-Zero_Soldering-orange?style=for-the-badge" alt="Zero Soldering"/>
+  <img src="https://img.shields.io/badge/Cost-~250_EURO-brightgreen?style=for-the-badge" alt="Cost"/>
 </p>
-
 <p align="center">
   <img src="https://img.shields.io/github/license/Mqr1oo/GLYPH?style=flat-square" alt="License"/>
   <img src="https://img.shields.io/github/stars/Mqr1oo/GLYPH?style=flat-square" alt="Stars"/>
