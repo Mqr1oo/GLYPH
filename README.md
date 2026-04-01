@@ -5,26 +5,20 @@
 ### The 100% Plug & Play, Zero-Soldering Tactical Communicator
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Platform-ESP32--S3-blue?style=for-the-badge&logo=espressif" alt="ESP32-S3"/>
+  <img src="https://img.shields.io/badge/Hardware-ESP32--S3-blue?style=for-the-badge&logo=espressif" alt="ESP32-S3"/>
+  <img src="https://img.shields.io/badge/Framework-Arduino-00979D?style=for-the-badge&logo=Arduino&logoColor=white" alt="Arduino"/>
   <img src="https://img.shields.io/badge/Radio-LoRa_SX1262-green?style=for-the-badge" alt="LoRa"/>
   <img src="https://img.shields.io/badge/Security-AES--256--CBC-red?style=for-the-badge&logo=letsencrypt" alt="AES-256"/>
   <img src="https://img.shields.io/badge/Assembly-Zero_Soldering-orange?style=for-the-badge" alt="Zero Soldering"/>
   <img src="https://img.shields.io/badge/Cost-~250_EURO-brightgreen?style=for-the-badge" alt="Cost"/>
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/github/license/Mqr1oo/GLYPH?style=flat-square" alt="License"/>
-  <img src="https://img.shields.io/github/stars/Mqr1oo/GLYPH?style=flat-square" alt="Stars"/>
-  <img src="https://img.shields.io/github/forks/Mqr1oo/GLYPH?style=flat-square" alt="Forks"/>
-  <img src="https://img.shields.io/github/issues/Mqr1oo/GLYPH?style=flat-square" alt="Issues"/>
-  <img src="https://img.shields.io/badge/Version-10.08.26-blue?style=flat-square" alt="Version"/>
-</p>
 
 **An ESP32-S3 dual-core tactical operating system for extreme operations.** Military-grade AES-256-CBC encryption • Offline GNSS navigation • Real-time team tracking • Ultra-low-power E-Ink display • Multi-language support.
 
 **Build your own off-grid military-grade communicator in under 45 minutes using standard Qwiic modules and a 3D printer. No soldering required.**
 
-[📥 Download](https://github.com/Mqr1oo/GLYPH/releases) • [📖 Documentation](#-documentation) • [🧰 Bill of Materials](#-hardware--bill-of-materials) • [🐛 Report Bug](https://github.com/Mqr1oo/GLYPH/issues)
+[📥 Download](https://github.com/Mqr1oo/GLYPH/releases) • [📖 Documentation](#-documentation) • [🧰 Bill of Materials](#-hardware--bill-of-materials) • [🐛 Report Bug](https://github.com/Mqr1oo/GLYPH/security.md)
 
 ---
 
