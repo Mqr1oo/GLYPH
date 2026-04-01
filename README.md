@@ -32,13 +32,18 @@
 
 ## 📸 Screenshots & Demo
 
-> **Meet GLYPH**
-> ![GLYPH Device Fully Assembled](docs/images/device.jpg)
-> ![Plug & Play Qwiic Internals](docs/images/qwiic.png)
-> ![Tactical Map Interface](docs/images/map.jpg)
-> ![Encrypted Messenger](docs/images/messenger.jpg)
-> ![Team Radar](docs/images/radar.jpg)
+<p align="center">
+  <b>Meet GLYPH: Hardware & Navigation</b><br><br>
+  <img src="docs/images/device.jpg" width="48%" alt="GLYPH Device Fully Assembled"/>
+  <img src="docs/images/map.jpg" width="48%" alt="Tactical Map Interface"/>
+</p>
 
+<p align="center">
+  <b>System Internals & Tactical Interface</b><br><br>
+  <img src="docs/images/qwiic.png" width="31%" alt="Plug & Play Qwiic Internals"/>
+  <img src="docs/images/messenger.jpg" width="31%" alt="Encrypted Messenger"/>
+  <img src="docs/images/radar.jpg" width="31%" alt="Team Radar"/>
+</p>
 ---
 
 ## 🎯 Why GLYPH OS?
