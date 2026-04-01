@@ -32,12 +32,12 @@
 
 ## 📸 Screenshots & Demo
 
-> **Add your device photos here**
+> **Meet GLYPH**
 > ![GLYPH Device Fully Assembled](docs/images/device.jpg)
 > ![Plug & Play Qwiic Internals](docs/images/qwiic.png)
-> ![Tactical Map Interface](docs/images/map.png)
-> ![Encrypted Messenger](docs/images/messenger.png)
-> ![Team Radar](docs/images/radar.png)
+> ![Tactical Map Interface](docs/images/map.jpg)
+> ![Encrypted Messenger](docs/images/messenger.jpg)
+> ![Team Radar](docs/images/radar.jpg)
 
 ---
 
