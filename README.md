@@ -87,7 +87,6 @@ The revolutionary aspect? **It's entirely Plug & Play.** We designed GLYPH so th
 |------------|-------------|----------|
 | **FIT** | Auto-zoom to show entire route + KML | Route overview, mission planning |
 | **ZOOM** | Fixed ~20m radius around position | Close navigation, tactical ops |
-| **TACTICAL** | Dynamic zoom based on activity | General navigation |
 
 ### 📡 Encrypted LoRa Messenger
 
