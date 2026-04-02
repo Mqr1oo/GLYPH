@@ -161,9 +161,9 @@ The enclosure specifically leverages Bambu Lab's AMS system for professional, mu
 
 ## 🆘 Emergency Features
 
-- **SOS Broadcast (Hold A+C for 3s)**: Switches to SF12 (max range ~20km) and broadcasts "USERNAME SOS! LAT:X LON:X" continuously for 10 seconds.
-- **Recording Toggle (Hold A+B for 1s)**: Instantly starts/stops KML route recording to the SD card.
-- **Manual Shutdown (Press A+B+C)**: Enters deep sleep for 8 minutes, killing the GPS to save battery.
+- **SOS Broadcast (Hold B+C for 3s)**: Switches to SF12 (max range ~20km) and broadcasts "USERNAME SOS! LAT:X LON:X" continuously for 10 seconds.
+- **Recording Toggle (Hold A+B for 3s)**: Instantly starts/stops KML route recording to the SD card.
+- **Manual Sleep Mode (Press A+C)**: Enters a deep sleep cycle (8 minutes asleep, 4 seconds awake). 
 - **Black Box Logging**: Automatically saves telemetry (sys_date.csv) and message archives (sec_date.txt) to the SD card.
 
 ---
