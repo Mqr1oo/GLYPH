@@ -48,7 +48,7 @@ The revolutionary aspect? **It's entirely Plug & Play.** We designed GLYPH so th
 - 🔌 **True Plug & Play** - Uses Qwiic connectors throughout. Assemble it in 30-45 minutes.
 - 🔒 **Military-Grade Encryption** - AES-256-CBC with SHA-256 key derivation from team names.
 - 📡 **Long-Range LoRa** - 10km+ range without any infrastructure (up to 20km in emergency mode).
-- 🗺️ **Offline GPS Tracking** - Smart breadcrumb trail with <20cm noise filtering.
+- 🗺️ **Offline GPS Tracking** - Smart breadcrumb trail with <2m noise filtering.
 - 👥 **Team Awareness** - Track 5 teammates entirely offline based on LoRa coordinates.
 - 🔋 **Intelligent Power Management** - 18h (TACTICAL) → 36h (ECO) → 7 days (STEALTH).
 - 🖨️ **Bambu Lab Optimized** - Rugged PETG CF body with TPU button caps via AMS.
