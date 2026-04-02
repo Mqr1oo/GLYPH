@@ -150,6 +150,7 @@ All modules connect using standard Qwiic cables - zero soldering required.
 | **18650 Li-Ion battery** (3400mAh, 3.7V) | Standard rechargeable cell |
 | **18650 battery holder** | With screw terminals |
 | **ARK connector** (3.5mm, 2-pin) or screw terminal | For power connection |
+| **MicroSD Card** | For storing routes/logs (8GB/16Gb) |
 
 ### 2. The 3D Printed Enclosure - From Bambu Lab (~80 EURO)
 
