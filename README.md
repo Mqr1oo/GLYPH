@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🛰️ GLYPH
+# 📡 GLYPH
 
 ### The 100% Plug & Play, Zero-Soldering Tactical Communicator
 
