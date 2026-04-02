@@ -76,7 +76,7 @@ The revolutionary aspect? **It's entirely Plug & Play.** We designed GLYPH so th
 **Smart GPS Breadcrumb System**
 - **Noise Filtering**: Only records true movement.
 - **Breadcrumb Buffer**: Stores up to 350 waypoints in RTC memory (survives deep sleep).
-- **Automatic Logging**: Real-time KML route recording to SD card (compatible with Google Earth and ATAK).
+- **Automatic Logging**: Real-time KML route recording to SD card.
 
 **KML Route Overlay System**
 - Load pre-planned routes from SD card for mission planning.
