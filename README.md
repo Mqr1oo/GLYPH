@@ -117,8 +117,8 @@ The revolutionary aspect? **It's entirely Plug & Play.** We designed GLYPH so th
 
 | Mode | CPU | GPS Rate | LoRa | Battery* | Details |
 |------|-----|----------|------|----------|---------|
-| **🎯 TACTICAL** | 80 MHz | 1s | Active (SF11) | ~18h | Full operational capability |
-| **🌲 ECO** | 40 MHz | 10s | Active (SF11) | ~36h | Extended range patrols |
+| **🎯 TACTICAL** | 80 MHz | 1s | Active (SF11) | ~32h | Full operational capability |
+| **🌲 ECO** | 40 MHz | 10s | Active (SF11) | ~40h | Extended range patrols |
 | **🥷 STEALTH** | 40 MHz | 50s | **OFF** | ~7 days | Radio silence, zero emissions |
 
 *\* Based on 3400mAh 18650 Li-Ion battery.*
