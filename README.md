@@ -140,7 +140,7 @@ GLYPH pairs with a custom mobile application via BLE for enhanced control and si
 
 ---
 
-## 🧰 Hardware & Bill of Materials
+## 🧰 Hardware & Bill of Materials (160-190 EURO)
 
 All modules connect using standard Qwiic cables - zero soldering required.
 
