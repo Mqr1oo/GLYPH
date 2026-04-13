@@ -13,10 +13,9 @@
   <img src="https://img.shields.io/badge/Cost-~250_EURO-brightgreen?style=for-the-badge" alt="Cost"/>
 </p>
 
-
 **An ESP32-S3 dual-core tactical operating system for extreme operations.** Military-grade AES-256-CBC encryption • Offline GNSS navigation • Real-time team tracking • Ultra-low-power E-Ink display • Multi-language support.
 
-**Build your own off-grid military-grade communicator in under 45 minutes using standard Qwiic modules and a 3D printer. No soldering required.**
+**Build your own off-grid military-grade communicator in under 30 minutes using standard Qwiic modules and a 3D printer. No soldering required.**
 
  [📖 Documentation](#-documentation) • [🧰 Bill of Materials](#-hardware--bill-of-materials) • [🐛 Report Bug](https://github.com/Mqr1oo/GLYPH/blob/main/Security.md)
 ---
@@ -38,103 +37,91 @@
   <img src="docs/images/radar.jpg" width="31%" alt="Team Radar"/>
 </p>
 
-
 ## 🎯 Why GLYPH OS?
 
 GLYPH is a self-contained, off-grid communication system designed for scenarios where cellular networks fail - tactical operations, extreme hiking, search & rescue, and disaster response. Think of it as a **military-grade walkie-talkie meets GPS tracker**, heavily focused on secure LoRa messaging and highly accurate GPS breadcrumbs.
 
-The revolutionary aspect? **It's entirely Plug & Play.** We designed GLYPH so that anyone with a 3D printer can build their own tactical communication device in under an hour. **No soldering iron. No technical skills required. Just plug and go.**
+The revolutionary aspect? **It's entirely Plug & Play.** We designed GLYPH so that anyone with a 3D printer can build their own tactical communication device in around 30 minutes. **No soldering iron. No technical skills required. Just plug and go.**
 
-- 🔌 **True Plug & Play** - Uses Qwiic connectors throughout. Assemble it in 30-45 minutes.
+- 🔌 **True Plug & Play** - Uses Qwiic connectors throughout. Assemble it in ~30 minutes.
 - 🔒 **Military-Grade Encryption** - AES-256-CBC with SHA-256 key derivation from team names.
 - 📡 **Long-Range LoRa** - 10km+ range without any infrastructure (up to 20km in emergency mode).
-- 🗺️ **Offline GPS Tracking** - Smart breadcrumb trail with <2m noise filtering.
+- 🗺️ **Offline GPS Tracking** - Smart breadcrumb trail, KML routing, and PC web-viewer support.
 - 👥 **Team Awareness** - Track 5 teammates entirely offline based on LoRa coordinates.
-- 🔋 **Intelligent Power Management** - 18h (TACTICAL) → 36h (ECO) → 7 days (STEALTH).
+- 🔋 **Intelligent Power Management** - 32h (TACTICAL) → 40h (ECO) → 6 days (STEALTH) → ~70 days (DEEP SLEEP).
 - 🖨️ **Bambu Lab Optimized** - Rugged PETG CF body with TPU button caps via AMS.
-- 🌍 **Multi-Language** - 11 languages supported.
+- 🌍 **Multi-Language & Timezones** - 11 languages supported with adjustable UTC offsets.
 
 ---
 
 ## 📑 Table of Contents
 
-- [🔥 Core Capabilities](#-core-capabilities)
-  - [🗺️ Tactical Map & Navigation](#️-tactical-map--navigation)
-  - [📡 Encrypted LoRa Messenger](#-encrypted-lora-messenger)
-  - [👥 Team Radar](#-team-radar)
+- [🔥 Core Capabilities & Menus](#-core-capabilities--menus)
+- [📱 Companion App](#-companion-app)
 - [🥷 Power Management](#-power-management)
 - [🧰 Hardware & Bill of Materials](#-hardware--bill-of-materials)
-- [🆘 Emergency Features](#-emergency-features)
+- [🆘 Emergency Features & Shortcuts](#-emergency-features--shortcuts)
 - [📄 License](#-license)
 
 ---
 
-## 🔥 Core Capabilities
+## 🔥 Core Capabilities & Menus
 
-### 🗺️ Tactical Map & Navigation
+### 🗺️ Menu 1: Tactical Map & Navigation
+- **Live Tracking:** Displays recording status, current time, kilometers traveled, and heading direction.
+- **Route Manager:** A submenu allows you to view saved routes (KML format) with dates and timestamps.
+- **KML Overlay:** Select a previously completed route and overlay it on the screen to navigate back.
+- **PC Integration:** KML files saved on the SD card can be viewed natively on a PC using tools like [Glandnav KML Viewer](https://glandnav.com/tools/kml-viewer).
+- **Data Logging:** SD card simultaneously stores KML route files, text files for message archives, and a CSV file logging system telemetry every minute.
 
-**Smart GPS Breadcrumb System**
-- **Noise Filtering**: Only records true movement.
-- **Breadcrumb Buffer**: Stores up to 350 waypoints in RTC memory (survives deep sleep).
-- **Automatic Logging**: Real-time KML route recording to SD card.
+### 📡 Menu 2: Encrypted LoRa Messenger
+- **Private Mode (AES-256-CBC):** Highly secure mode where your Team Name acts as the encryption key. Only users with the exact same Team Name can read the messages.
+- **Public Mode:** Unencrypted broadcasts. You can see messages from other devices operating in public mode, even if they aren't on your team.
+- **Input Methods:** Type messages using the physical device keyboard or via Bluetooth using the Companion App.
 
-**KML Route Overlay System**
-- Load pre-planned routes from SD card for mission planning.
-- Automatic bounding box calculation and distance pre-calculation.
+### 🌡️ Menu 3: Sensor Telemetry
+Live dashboard displaying: Current Time, Date, GPS Location, Altitude, Visible Satellites, Temperature, and Humidity.
 
-**Triple Zoom System**
-| Zoom Level | Description | Use Case |
-|------------|-------------|----------|
-| **FIT** | Auto-zoom to show entire route + KML | Route overview, mission planning |
-| **ZOOM** | Fixed ~20m radius around position | Close navigation, tactical ops |
+### 👥 Menu 4: Team Radar
+- **Live Squad Tracking:** Track up to **5 teammates** simultaneously.
+- **Data Extraction:** Calculates distance to teammates based on the coordinates embedded in their last received message.
+- **Configuration:** Set and change your Team Name directly from this menu or the Companion App.
 
-### 📡 Encrypted LoRa Messenger
+### ⚙️ Menus 5, 6 & 7: System Settings
+- **Menu 5 (Power Mode):** Toggle between Tactical, Eco, and Stealth profiles.
+- **Menu 6 (Language):** Choose between 11 localized languages.
+- **Menu 7 (Timezone):** Set your local UTC offset (e.g., UTC+2, UTC-5).
 
-**Military-Grade Encryption**
-> AES-256-CBC Implementation
-> Key Generation: SHA-256(Team Name) → 256-bit key
-> IV: Random 16 bytes per message
-> Padding: PKCS#7 standard
+---
 
-**Transmission Protocol**
-- Dynamic IV prevents replay attacks.
-- Team-based encryption (different teams = different keys).
-- Automatic GPS coordinates embedded in every message.
+## 📱 Companion App
 
-### 👥 Team Radar
-
-**Live Squad Tracking**
-- Track up to **5 teammates** simultaneously.
-- Automatic position extraction from incoming radio messages.
-- Distance, bearing, and "last seen" status for each team member (NOW / 2m / 15m ago).
-- Works entirely offline - no servers, no internet required.
+GLYPH pairs with a custom mobile application via BLE for enhanced control and situational awareness:
+- **Status Dashboard:** View real-time device telemetry on your phone (Date, Time, Battery Level, Location, Satellites, Temp, and Humidity).
+- **Coms Interface:** Chat seamlessly with other GLYPH users (Public or Secure mode) using a familiar, standard messaging app interface.
+- **Remote Control:** Select your Team Name, switch Power Modes, and configure the device directly from your phone screen.
 
 ---
 
 ## 🥷 Power Management
 
-**Intelligent Multi-Mode System**
+**Intelligent Multi-Mode System (Menu 5)**
 
-| Mode | CPU | GPS Rate | LoRa | Battery* | Details |
-|------|-----|----------|------|----------|---------|
-| **🎯 TACTICAL** | 80 MHz | 1s | Active (SF11) | ~32h | Full operational capability |
-| **🌲 ECO** | 40 MHz | 10s | Active (SF11) | ~40h | Extended range patrols |
-| **🥷 STEALTH** | 40 MHz | 50s | **OFF** | ~7 days | Radio silence, zero emissions |
+| Mode | BLE | GPS | LoRa | Battery* | Details |
+|------|-----|-----|------|----------|---------|
+| **🎯 NORMAL** | **ON** | Max Power | Active | ~32h | Full operational capability |
+| **🌲 ECO** | **OFF** | Power Save | Active | ~40h | Extended range patrols |
+| **🥷 STEALTH** | **OFF** | Power Save | **OFF** | ~6 days | Radio silence, zero emissions |
 
 *\* Based on 3400mAh 18650 Li-Ion battery.*
 
-**Deep Sleep Architecture**
-- Automatic sleep/wake based on motion detection (>1.2g deviation).
-- Manual deep sleep with GPS wake-up intervals.
-- All mission data survives power loss (RTC memory + SD card).
+**Advanced Power Saving**
+- **Auto-Standby:** When a route is not being recorded, the device quickly drops into a standby state to reduce consumption, waking instantly upon detecting movement.
+- **Deep Sleep (Shutdown):** Triggered by pressing `A+C`. The board completely shuts down and enters deep sleep. It wakes up once every 8 minutes for 4 seconds to check the IMU (movement) or button states. Estimated battery life in this state is **~70 days**.
 
 ---
 
 ## 🧰 Hardware & Bill of Materials
-
-We designed GLYPH to be accessible. Reliable communication shouldn't require expensive satellites ($400+ devices with mandatory subscriptions). 
-
-### 1. The Electronics (160-190 EURO)
 
 All modules connect using standard Qwiic cables - zero soldering required.
 
@@ -149,22 +136,22 @@ All modules connect using standard Qwiic cables - zero soldering required.
 | **18650 Li-Ion battery** (3400mAh, 3.7V) | Standard rechargeable cell |
 | **18650 battery holder** | With screw terminals |
 | **ARK connector** (3.5mm, 2-pin) or screw terminal | For power connection |
-| **MicroSD Card** | For storing routes/logs ( 8GB/16GB ) |
+| **MicroSD Card** | For storing routes/logs (8GB/16GB) |
 
-### 2. The 3D Printed Enclosure - From Bambu Lab (~80 EURO)
-
+### The 3D Printed Enclosure - From Bambu Lab (~80 EURO)
 The enclosure specifically leverages Bambu Lab's AMS system for professional, multi-material capabilities:
 - PETG CF filament (enclosure body)
 - TPU filament (button caps)
 
 ---
 
-## 🆘 Emergency Features
+## 🆘 Emergency Features & Shortcuts
 
-- **SOS Broadcast (Hold B+C for 3s)**: Switches to SF12 (max range ~20km) and broadcasts "USERNAME SOS! LAT:X LON:X" continuously for 10 seconds.
-- **Recording Toggle (Hold A+B for 3s)**: Instantly starts/stops KML route recording to the SD card.
-- **Manual Sleep Mode (Press A+C)**: Enters a deep sleep cycle (8 minutes asleep, 4 seconds awake). 
-- **Black Box Logging**: Automatically saves telemetry (sys_date.csv) and message archives (sec_date.txt) to the SD card.
+Physical button combinations provide instant access to critical features:
+
+- **[ A + B ] Toggle Recording:** Instantly starts or stops the KML route tracking to the SD card.
+- **[ B + C ] SOS Broadcast:** Triggers a distress signal. Broadcasts an SOS message with your exact coordinates to all nearby devices.
+- **[ A + C ] Deep Sleep / Shutdown:** Safely shuts down the board into the ultra-low-power 70-day deep sleep mode.
 
 ---
 
@@ -172,13 +159,12 @@ The enclosure specifically leverages Bambu Lab's AMS system for professional, mu
 
 Distributed under the **GPL v3**. See `LICENSE` file for details.
 
-
 <div align="center">
 
 **Built with ❤️ for operators, adventurers, and survivalists**
 
 *"When all other systems fail, GLYPH persists."*
 
-[⬆ Back to Top](#-glyph-os)
+[⬆ Back to Top](#-glyph)
 
 </div>
