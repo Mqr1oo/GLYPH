@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLYPH | Hardware Diagnostic Tool</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/esp-web-tools@10.0.1/dist/web/install-button.js?module"></script>
+    
+    <style>
+        esp-web-install-button[supported="false"] { display: none; }
+        
+        #terminal::-webkit-scrollbar { width: 6px; }
+        #terminal::-webkit-scrollbar-track { background: #050B14; }
+        #terminal::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 3px; }
+
+        .glow-button {
+            box-shadow: 0 0 25px -5px rgba(37, 99, 235, 0.6);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-[#050810] text-slate-300 flex items-center justify-center p-4 sm:p-8 font-sans antialiased selection:bg-blue-500/30">
+
+    <div class="w-full max-w-5xl bg-[#0B111D] rounded-[2rem] shadow-[0_0_50px_-15px_rgba(0,0,0,1)] border border-slate-800/60 overflow-hidden relative p-8">
+        
+        <div class="text-center mb-8 flex flex-col items-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold tracking-widest text-white mb-2">
+                GLYPH<span class="text-blue-500">DIAGNOSTIC</span>
+            </h1>
+            <p class="text-xs text-slate-500 uppercase tracking-[0.2em]">Hardware Validation Utility v1.0-DIAG</p>
+        </div>
+
+        <div class="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4 mb-8 flex items-start space-x-4">
+            <svg class="w-6 h-6 text-amber-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            </svg>
+            <div>
+                <h3 class="text-amber-500 font-bold text-xs uppercase tracking-widest mb-1">Testing & Diagnostics Only</h3>
+                <p class="text-amber-200/60 text-xs sm:text-sm leading-relaxed">
+                    This firmware is designed strictly to verify your hardware assembly (E-Ink, I2C Sensors, LoRa module). It does <strong>not</strong> contain communication features or encryption. Flash this first to ensure your build is correct.
+                </p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            
+            <div class="bg-[#0F1626] border border-slate-800/80 rounded-2xl p-6 flex flex-col">
+                <h2 class="text-xs font-bold text-blue-500 uppercase tracking-widest mb-6 flex items-center">
+                    <span class="w-2 h-2 rounded-full bg-blue-500 mr-2 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
+                    Connection Guide:
+                </h2>
+                
+                <ul class="space-y-4 text-sm text-slate-300 font-medium mb-8 flex-grow">
+                    <li class="flex items-start">
+                        <span class="text-blue-500 font-bold mr-3">1.</span>
+                        Connect your device via high-quality USB data cable.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-blue-500 font-bold mr-3">2.</span>
+                        Click "FLASH OS" below to install the firmware. Select the correct COM port.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-blue-500 font-bold mr-3">3.</span>
+                        Close the flasher prompt, then connect to the Serial Monitor to view hardware diagnostics.
+                    </li>
+                </ul>
+
+                <div class="mt-auto flex justify-center pb-2">
+                    <esp-web-install-button manifest="manifest.json">
+                        <button slot="activate" class="bg-[#2563EB] hover:bg-[#3B82F6] text-white font-bold py-3.5 px-10 rounded-xl glow-button transition-all duration-300 flex items-center tracking-wider text-sm">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                            FLASH OS
+                        </button>
+                        <span slot="unsupported" class="text-red-400 text-sm">Your browser does not support Web Serial. Use Chrome/Edge.</span>
+                        <span slot="not-allowed" class="text-red-400 text-sm">HTTPS is required to use the Flasher.</span>
+                    </esp-web-install-button>
+                </div>
+            </div>
+
+            <div class="bg-[#0F1626] border border-slate-800/80 rounded-2xl flex flex-col overflow-hidden">
+                
+                <div class="bg-[#131B2D] border-b border-slate-800/80 px-4 py-3 flex justify-between items-center">
+                    <div class="flex items-center space-x-2 text-xs font-bold text-slate-300 tracking-widest uppercase">
+                        <svg class="w-4 h-4 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M4 17h16a2 2 0 002-2V5a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        <span>Serial Monitor</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <span class="bg-[#0B111D] text-slate-400 text-[10px] px-2 py-1 rounded border border-slate-700/50">115200</span>
+                        <button id="clearBtn" class="text-[10px] font-bold text-slate-400 hover:text-white transition-colors tracking-widest uppercase">Clear</button>
+                    </div>
+                </div>
+
+                <div id="terminal" class="bg-[#050810] h-48 sm:h-56 p-4 overflow-y-auto font-mono text-[11px] sm:text-xs text-cyan-400 whitespace-pre-wrap">Waiting for connection...</div>
+
+                <div class="border-t border-slate-800/80 p-3 bg-[#0F1626]">
+                    <div class="flex bg-[#050810] rounded-lg border border-slate-800/80 overflow-hidden">
+                        <input type="text" id="serialInput" placeholder="Type command..." class="flex-grow bg-transparent text-slate-300 px-3 py-2 text-xs focus:outline-none placeholder-slate-600 disabled:opacity-50" disabled>
+                        <button id="sendBtn" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-4 py-2 text-xs font-bold transition-colors disabled:opacity-50" disabled>SEND</button>
+                    </div>
+                </div>
+
+                <div class="p-3 bg-[#0F1626] border-t border-slate-800/50">
+                    <button id="connectSerialBtn" class="w-full bg-[#1A233A] hover:bg-[#222E4A] border border-slate-700/50 text-slate-300 py-3 rounded-lg text-xs font-bold tracking-widest flex justify-center items-center transition-colors">
+                        <span id="connectStatusDot" class="w-2 h-2 rounded-full bg-slate-500 mr-2"></span>
+                        <span id="connectBtnText">CONNECT SERIAL</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="mt-8 text-center">
+            <p class="text-[10px] text-slate-600 tracking-[0.2em] uppercase font-bold">GLYPH.SYSTEMS &copy; 2026</p>
+        </div>
+    </div>
+
+    <script>
+        let port;
+        let reader;
+        let inputDone;
+        let outputDone;
+        let inputStream;
+        let outputStream;
+
+        const terminal = document.getElementById('terminal');
+        const connectBtn = document.getElementById('connectSerialBtn');
+        const connectBtnText = document.getElementById('connectBtnText');
+        const connectStatusDot = document.getElementById('connectStatusDot');
+        const clearBtn = document.getElementById('clearBtn');
+        const serialInput = document.getElementById('serialInput');
+        const sendBtn = document.getElementById('sendBtn');
+
+        function logToTerminal(text, type = 'normal') {
+            const span = document.createElement('span');
+            if (type === 'error') span.className = 'text-red-400';
+            else if (type === 'system') span.className = 'text-slate-500';
+            else span.className = 'text-cyan-400';
+            
+            span.textContent = text;
+            terminal.appendChild(span);
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+
+        connectBtn.addEventListener('click', async () => {
+            if (port) {
+                await disconnectSerial();
+                return;
+            }
+
+            try {
+                port = await navigator.serial.requestPort();
+                
+                await port.open({ baudRate: 115200 });
+                
+                connectBtnText.textContent = "DISCONNECT SERIAL";
+                connectStatusDot.classList.replace('bg-slate-500', 'bg-emerald-500');
+                connectStatusDot.classList.add('shadow-[0_0_8px_rgba(16,185,129,0.8)]');
+                serialInput.disabled = false;
+                sendBtn.disabled = false;
+                
+                terminal.innerHTML = '';
+                logToTerminal('Connected to ' + port.getInfo().usbProductId + '...\n\n', 'system');
+
+                let decoder = new TextDecoderStream();
+                inputDone = port.readable.pipeTo(decoder.writable);
+                inputStream = decoder.readable;
+                reader = inputStream.getReader();
+                readLoop();
+
+            } catch (err) {
+                logToTerminal('\nError: ' + err.message + '\n', 'error');
+            }
+        });
+
+        async function readLoop() {
+            try {
+                while (true) {
+                    const { value, done } = await reader.read();
+                    if (value) {
+                        logToTerminal(value);
+                    }
+                    if (done) {
+                        reader.releaseLock();
+                        break;
+                    }
+                }
+            } catch (error) {
+            }
+        }
+
+        async function disconnectSerial() {
+            if (reader) {
+                await reader.cancel();
+                await inputDone.catch(() => {});
+                reader = null;
+                inputDone = null;
+            }
+            if (outputStream) {
+                await outputStream.getWriter().close();
+                await outputDone;
+                outputStream = null;
+                outputDone = null;
+            }
+            await port.close();
+            port = null;
+            
+            connectBtnText.textContent = "CONNECT SERIAL";
+            connectStatusDot.classList.replace('bg-emerald-500', 'bg-slate-500');
+            connectStatusDot.classList.remove('shadow-[0_0_8px_rgba(16,185,129,0.8)]');
+            serialInput.disabled = true;
+            sendBtn.disabled = true;
+            logToTerminal('\nDisconnected.\n', 'system');
+        }
+
+        clearBtn.addEventListener('click', () => {
+            terminal.innerHTML = '';
+        });
+
+        async function sendData() {
+            if (!port || !serialInput.value) return;
+            
+            const encoder = new TextEncoder();
+            const writer = port.writable.getWriter();
+            await writer.write(encoder.encode(serialInput.value + '\n'));
+            writer.releaseLock();
+            
+            logToTerminal('> ' + serialInput.value + '\n', 'system');
+            serialInput.value = '';
+        }
+
+        sendBtn.addEventListener('click', sendData);
+        serialInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendData();
+        });
+
+    </script>
+</body>
+</html>
