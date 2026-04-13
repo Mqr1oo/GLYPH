@@ -71,8 +71,8 @@ The revolutionary aspect? **It's entirely Plug & Play.** We designed GLYPH so th
 
 **Smart GPS Breadcrumb System**
 - **Live Tracking UI:** Displays recording status, current time, kilometers traveled, and heading direction.
-- **Noise Filtering:** Only records true movement, filtering out GPS drift (<2m).
-- **Breadcrumb Buffer:** Stores up to 350 waypoints in RTC memory (survives deep sleep).
+- **Noise Filtering:** Only records true movement, filtering out GPS drift.
+- **Breadcrumb Buffer:** Stores up to 350 waypoints in RTC memory.
 - **Data Logging:** SD card automatically stores KML route files, text files for message archives, and a CSV file logging system telemetry every minute.
 
 **Route Manager & KML Overlay**
@@ -80,7 +80,7 @@ The revolutionary aspect? **It's entirely Plug & Play.** We designed GLYPH so th
 - **Tactical Overlay:** Select a previously completed route from the list and overlay it on the screen to navigate back via the exact same path.
 - **PC Integration:** KML files saved on the SD card can be viewed natively on a PC using tools like [Glandnav KML Viewer](https://glandnav.com/tools/kml-viewer).
 
-**Triple Zoom System**
+**Zoom System**
 | Zoom Level | Description | Use Case |
 |------------|-------------|----------|
 | **FIT** | Auto-zoom to show entire route + KML | Route overview, mission planning |
@@ -108,7 +108,14 @@ Live dashboard displaying: Current Time, Date, GPS Location, Altitude, Visible S
 
 ## 📱 Companion App
 
-GLYPH pairs with a custom mobile application via BLE for enhanced control and situational awareness:
+GLYPH pairs with a custom mobile application via BLE for enhanced control and situational awareness. 
+
+<p align="center">
+  <img src="docs/images/ap1.jpg" width="31%" alt="App Interface 1"/>
+  <img src="docs/images/ap2.jpg" width="31%" alt="App Interface 2"/>
+  <img src="docs/images/ap3.jpg" width="31%" alt="App Interface 3"/>
+</p>
+
 - **Status Dashboard:** View real-time device telemetry on your phone (Date, Time, Battery Level, Location, Satellites, Temp, and Humidity).
 - **Coms Interface:** Chat seamlessly with other GLYPH users (Public or Secure mode) using a familiar messaging app interface.
 - **Remote Control:** Select your Team Name, switch Power Modes, and configure the device directly from your phone screen.
