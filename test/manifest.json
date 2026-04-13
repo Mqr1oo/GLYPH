@@ -1,0 +1,15 @@
+{
+  "name": "GLYPH Diagnostic Tool",
+  "version": "1.0-DIAG",
+  "builds": [
+    {
+      "chipFamily": "ESP32-S3",
+      "parts": [
+        {
+          "path": "firmware.bin",
+          "offset": 0
+        }
+      ]
+    }
+  ]
+}
