@@ -2,7 +2,7 @@
 
 # 📡 GLYPH
 
-### The 100% Plug & Play, Zero-Soldering Tactical Communicator
+### The 100% Plug & Play Tactical Communicator
 
 <p align="center">
   <img src="https://img.shields.io/badge/Hardware-ESP32--S3-blue?style=for-the-badge&logo=espressif" alt="ESP32-S3"/>
@@ -68,11 +68,23 @@ The revolutionary aspect? **It's entirely Plug & Play.** We designed GLYPH so th
 ## 🔥 Core Capabilities & Menus
 
 ### 🗺️ Menu 1: Tactical Map & Navigation
-- **Live Tracking:** Displays recording status, current time, kilometers traveled, and heading direction.
-- **Route Manager:** A submenu allows you to view saved routes (KML format) with dates and timestamps.
-- **KML Overlay:** Select a previously completed route and overlay it on the screen to navigate back.
+
+**Smart GPS Breadcrumb System**
+- **Live Tracking UI:** Displays recording status, current time, kilometers traveled, and heading direction.
+- **Noise Filtering:** Only records true movement, filtering out GPS drift (<2m).
+- **Breadcrumb Buffer:** Stores up to 350 waypoints in RTC memory (survives deep sleep).
+- **Data Logging:** SD card automatically stores KML route files, text files for message archives, and a CSV file logging system telemetry every minute.
+
+**Route Manager & KML Overlay**
+- **File Manager:** A submenu allows you to view saved routes with their dates and timestamps.
+- **Tactical Overlay:** Select a previously completed route from the list and overlay it on the screen to navigate back via the exact same path.
 - **PC Integration:** KML files saved on the SD card can be viewed natively on a PC using tools like [Glandnav KML Viewer](https://glandnav.com/tools/kml-viewer).
-- **Data Logging:** SD card simultaneously stores KML route files, text files for message archives, and a CSV file logging system telemetry every minute.
+
+**Triple Zoom System**
+| Zoom Level | Description | Use Case |
+|------------|-------------|----------|
+| **FIT** | Auto-zoom to show entire route + KML | Route overview, mission planning |
+| **ZOOM** | Fixed ~20m radius around position | Close navigation, tactical ops |
 
 ### 📡 Menu 2: Encrypted LoRa Messenger
 - **Private Mode (AES-256-CBC):** Highly secure mode where your Team Name acts as the encryption key. Only users with the exact same Team Name can read the messages.
@@ -88,7 +100,7 @@ Live dashboard displaying: Current Time, Date, GPS Location, Altitude, Visible S
 - **Configuration:** Set and change your Team Name directly from this menu or the Companion App.
 
 ### ⚙️ Menus 5, 6 & 7: System Settings
-- **Menu 5 (Power Mode):** Toggle between Tactical, Eco, and Stealth profiles.
+- **Menu 5 (Power Mode):** Toggle between Normal, Eco, and Stealth profiles.
 - **Menu 6 (Language):** Choose between 11 localized languages.
 - **Menu 7 (Timezone):** Set your local UTC offset (e.g., UTC+2, UTC-5).
 
@@ -98,7 +110,7 @@ Live dashboard displaying: Current Time, Date, GPS Location, Altitude, Visible S
 
 GLYPH pairs with a custom mobile application via BLE for enhanced control and situational awareness:
 - **Status Dashboard:** View real-time device telemetry on your phone (Date, Time, Battery Level, Location, Satellites, Temp, and Humidity).
-- **Coms Interface:** Chat seamlessly with other GLYPH users (Public or Secure mode) using a familiar, standard messaging app interface.
+- **Coms Interface:** Chat seamlessly with other GLYPH users (Public or Secure mode) using a familiar messaging app interface.
 - **Remote Control:** Select your Team Name, switch Power Modes, and configure the device directly from your phone screen.
 
 ---
