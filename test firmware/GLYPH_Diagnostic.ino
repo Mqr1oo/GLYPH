@@ -179,6 +179,8 @@ void drawScreen() {
 
 void setup() {
     Serial.begin(115200);
+    Serial.setTimeout(50); 
+
     delay(1000);
 
     pinMode(EDP_CS, OUTPUT); digitalWrite(EDP_CS, HIGH);
@@ -201,32 +203,43 @@ void setup() {
 }
 
 void loop() {
+    bool triggerUpdate = false;
+    int nextBtn = activeBtn;
     if (s_btn) {
         mButtons.update();
-        if (mButtons.isPressed(0)) activeBtn = 1;
-        if (mButtons.isPressed(1)) activeBtn = 2;
-        if (mButtons.isPressed(2)) activeBtn = 3;
+        static bool p0=false, p1=false, p2=false;
+        bool c0 = mButtons.isPressed(0);
+        bool c1 = mButtons.isPressed(1);
+        bool c2 = mButtons.isPressed(2);
+        
+        if (c0 && !p0) { nextBtn = 1; triggerUpdate = true; }
+        if (c1 && !p1) { nextBtn = 2; triggerUpdate = true; }
+        if (c2 && !p2) { nextBtn = 3; triggerUpdate = true; }
+        
+        p0 = c0; p1 = c1; p2 = c2;
     }
+
 
     if (Serial.available()) {
-        char c = Serial.read();
-        if (c == 'A' || c == 'a') activeBtn = 1;
-        if (c == 'B' || c == 'b') activeBtn = 2;
-        if (c == 'C' || c == 'c') activeBtn = 3;
+        String cmd = Serial.readString(); 
+        cmd.toUpperCase();
+        if (cmd.indexOf('A') >= 0) { nextBtn = 1; triggerUpdate = true; }
+        if (cmd.indexOf('B') >= 0) { nextBtn = 2; triggerUpdate = true; }
+        if (cmd.indexOf('C') >= 0) { nextBtn = 3; triggerUpdate = true; }
     }
-
-    if (millis() - lastCheck >= 10000) {
+    if (triggerUpdate) {
+        Serial.println(nextBtn == 1 ? "A" : (nextBtn == 2 ? "B" : "C"));
+        
+        activeBtn = nextBtn;
+        lastCheck = millis();
+        if(activeBtn == 1 || activeBtn == 2) scanHW();
+        drawScreen();
+    } 
+    else if (millis() - lastCheck >= 10000) {
         lastCheck = millis();
         scanHW();
         drawScreen();
     }
 
-    static int lastBtn = 1;
-    if(activeBtn != lastBtn) {
-        lastBtn = activeBtn;
-        if(activeBtn == 1 || activeBtn == 2) scanHW();
-        drawScreen();
-    }
-
-    delay(100);
+    delay(10);
 }
