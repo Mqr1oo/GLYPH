@@ -32,7 +32,8 @@ itself once it is installed, and GLYPH updates itself over Wi-Fi from **Control 
 
 ### 🔌 Setup
 - **Install firmware over USB-C, from the phone.** It is the app's first screen: plug GLYPH into
-  your phone and tap Install. No computer, no internet. Also under **Control › App**.
+  your phone, enter the access code that came with it, and tap Install. No computer, no internet.
+  Also under **Control › App**.
 
 ### ✨ Look and feel
 - Comms: Public and Secure get their own row, with icons, and a clearer empty chat.
@@ -74,4 +75,3 @@ itself once it is installed, and GLYPH updates itself over Wi-Fi from **Control 
 - E-ink tactical map with GPS breadcrumbs and KML routes on the memory card.
 - Encrypted LoRa messenger, team radar for 5 teammates, SOS.
 - Sensor screen, three power modes, 11 languages and time zones.
-- The web flasher: install GLYPH from Chrome or Edge, no tools needed.

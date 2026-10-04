@@ -5,21 +5,23 @@ The GLYPH firmware, the GLYPH app, the GLYPH name and logo, and the photos,
 images and documents in this repository are not open source.
 
 You may:
-  - download the GLYPH app and firmware from this repository's Releases or
-    from the official GLYPH flasher, and use them on GLYPH devices you own
-    or build for yourself;
+  - download the GLYPH app from this repository's Releases and use it;
+  - install the GLYPH firmware with the access code that comes with your
+    GLYPH, on the GLYPH devices it came for;
   - share links to this repository and its releases.
 
 You may not, without written permission from the author:
   - redistribute the app or firmware, modified or not, or offer them for
     download anywhere else;
+  - share your access code, or copy the firmware off a device or out of
+    the app;
   - sell them, or ship them on devices, kits or products you sell;
   - use the GLYPH name or logo for other products;
   - copy the photos, images or documents of this repository into other
     works, other than short quotes with a link back here.
 
-The GLYPH Diagnostic sketch in "test firmware/" is free software, licensed
-under the GNU General Public License v3.0 (see "test firmware/LICENSE").
+The GLYPH Diagnostic sketch in "diagnostic/" is free software, licensed
+under the GNU General Public License v3.0 (see "diagnostic/LICENSE").
 
 Earlier versions of GLYPH that were published in this repository under the
 GNU General Public License v3.0 remain available under that license. That

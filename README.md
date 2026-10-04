@@ -18,7 +18,7 @@ GLYPH units talk to each other over LoRa radio, and the phone app turns yours in
 </p>
 
 **[⬇️ Download the app](https://github.com/Mqr1oo/GLYPH/releases/latest)** &nbsp;·&nbsp;
-**[⚡ Install the firmware](https://glyph.cinevacuceva256.workers.dev/flasher/)** &nbsp;·&nbsp;
+**[🔒 Firmware](firmware/README.md)** &nbsp;·&nbsp;
 **[✨ What's new](CHANGELOG.md)** &nbsp;·&nbsp;
 **[🛠️ Build your own](#-build-your-own)**
 
@@ -118,7 +118,7 @@ long conversations and settings. It works fully offline once it is installed.
 | ⚙️ **Control** | Name, language (11), radio band and time zone, encrypted pairing, team channel, power mode, alerts, range check, diagnostics and firmware updates. |
 
 The app connects over Bluetooth, keeps the link in the background, and shows your trip in a live
-notification. It has no account, no ads and no tracking. See the [privacy policy](https://glyph.cinevacuceva256.workers.dev/privacy.html).
+notification. It has no account, no ads and no tracking. See the [privacy policy](PRIVACY.md).
 
 ---
 
@@ -164,7 +164,7 @@ notification. It has no account, no ads and no tracking. See the [privacy policy
 
 1. **Get a GLYPH**: [build one](#-build-your-own) in about 30 minutes, or wait for the kit (see [Roadmap](#-roadmap)).
 2. **Install the app**: download `GLYPH-x.y.z.apk` from [Releases](https://github.com/Mqr1oo/GLYPH/releases/latest) and open it on your Android phone. Allow installs from your browser if Android asks.
-3. **Install the firmware**: the app's first screen does it over a **USB-C cable**, with no computer and no internet. You can also use the [web flasher](https://glyph.cinevacuceva256.workers.dev/flasher/) in Chrome or Edge on a computer.
+3. **Install the firmware**: the app's first screen does it over a **USB-C cable**, with no computer and no internet. Enter the **access code** that comes with your GLYPH.
 4. **Pair**: tap the GLYPH logo in the app and enter the code shown on the device. A short tour shows you around.
 5. **Go outside.** From then on GLYPH updates itself over Wi-Fi, and the app updates itself too.
 
@@ -189,6 +189,10 @@ Every part connects with **Qwiic** plug-in cables. Nothing to solder.
 | **18650 Li-ion cell** (3400 mAh) + holder | Power |
 | **microSD card** (8–16 GB) | Tracks, messages and logs |
 
+The full parts list, print settings and the diagnostic are in [`hardware/`](hardware/README.md).
+The GLYPH firmware is installed from the app with the **access code that comes with every GLYPH**
+(the kit and the print files will be on MakerWorld).
+
 Parts cost about **160–190 €**. The case is printed in **PETG-CF** with **TPU** button caps,
 tuned for Bambu Lab printers with an AMS. Pick 868 MHz in Europe and 915 MHz in the Americas and Australia.
 
@@ -202,6 +206,22 @@ tuned for Bambu Lab printers with an AMS. Pick 868 MHz in Europe and 915 MHz in 
 | 💤 **Deep sleep** | Off | Off | Off | ~70 days |
 
 <sub>* Estimates with a 3400 mAh 18650 cell.</sub>
+
+---
+
+## 📂 What's in this repository
+
+| Folder | What it is |
+|---|---|
+| [`app/`](app/README.md) | 🔒 The Android app: download, features, permissions |
+| [`firmware/`](firmware/README.md) | 🔒 The firmware: how it is installed and updated, versions |
+| [`hardware/`](hardware/README.md) | Parts list, radio band, printing and assembly checks |
+| [`diagnostic/`](diagnostic/README.md) | ✅ Open-source sketch that tests every module after assembly |
+| [`docs/`](docs/guide.md) | The user guide, photos and screenshots |
+| [`CHANGELOG.md`](CHANGELOG.md) | What changed in each version |
+| [`PRIVACY.md`](PRIVACY.md) | The app's privacy policy |
+
+🔒 = closed source: the code lives in a private repository, the app is published in Releases.
 
 ---
 
@@ -226,8 +246,9 @@ GLYPH is a product in development, so the main code is not public. Here is what 
 
 | | What |
 |---|---|
-| ✅ **Free to download and use** | The Android app and the firmware, in [Releases](https://github.com/Mqr1oo/GLYPH/releases) and on the [flasher](https://glyph.cinevacuceva256.workers.dev/flasher/) |
-| ✅ **Open** | This documentation, the parts list, and the **GLYPH Diagnostic** sketch in [`test firmware/`](test%20firmware/) that checks your modules after assembly (GPL-3.0) |
+| ✅ **Free to download** | The Android app, in [Releases](https://github.com/Mqr1oo/GLYPH/releases) |
+| 🔑 **Comes with your GLYPH** | The firmware, installed from the app with the access code that comes with every GLYPH |
+| ✅ **Open source** | This documentation, the parts list, and the **GLYPH Diagnostic** sketch in [`diagnostic/`](diagnostic/README.md) that checks your modules after assembly (GPL-3.0) |
 | 🔒 **Closed source** | The GLYPH firmware and the app |
 
 ---

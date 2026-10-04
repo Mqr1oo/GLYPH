@@ -1,0 +1,11 @@
+name: Idea
+description: Suggest something GLYPH should do.
+labels: [idea]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea
+      description: What would you like GLYPH to do, and when would you use it?
+    validations:
+      required: true

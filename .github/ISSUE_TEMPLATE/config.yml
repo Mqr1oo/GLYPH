@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security problem
+    url: https://github.com/Mqr1oo/GLYPH/blob/main/Security.md
+    about: Please report security problems privately, as described here.
+  - name: User guide
+    url: https://github.com/Mqr1oo/GLYPH/blob/main/docs/guide.md
+    about: Setup, maps, messages, SOS and troubleshooting.

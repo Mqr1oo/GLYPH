@@ -1,7 +1,7 @@
 # Publishes a GitHub release from .github/release/: the files named in
 # release.json are downloaded from where they are built (the Android app
-# from Expo, the firmware from the GLYPH flasher), checked against their
-# SHA-256, and attached to the release, with notes.md as its text.
+# from Expo), checked against their SHA-256 and attached to the release,
+# with notes.md as its text. Files no longer listed are taken off it.
 # To publish a new version, edit those two files and push to main.
 name: Release
 
@@ -40,6 +40,9 @@ jobs:
           if gh release view "$tag" >/dev/null 2>&1; then
             gh release edit "$tag" --title "$title" --notes-file .github/release/notes.md --latest
             gh release upload "$tag" out/* --clobber
+            gh release view "$tag" --json assets -q '.assets[].name' | while read -r old; do
+              [ -e "out/$old" ] || gh release delete-asset "$tag" "$old" -y
+            done
           else
             gh release create "$tag" out/* --title "$title" --notes-file .github/release/notes.md --target "$GITHUB_SHA" --latest
           fi

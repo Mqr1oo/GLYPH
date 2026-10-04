@@ -2,12 +2,11 @@
 
 ### Download
 
-| File | What it is |
-|---|---|
-| **GLYPH-1.3.0.apk** | The Android app (Android 7 or newer). Open it on your phone to install. |
-| **GLYPH-firmware-04.10.26.bin** | The firmware, a full 4 MB image written at address `0x0`. The app installs it for you over USB-C, and so does the [web flasher](https://glyph.cinevacuceva256.workers.dev/flasher/). |
+**GLYPH-1.3.0.apk**: the Android app, for Android 7 or newer. Open it on your phone to install.
 
-The app keeps itself up to date once it is installed, and GLYPH updates itself over Wi-Fi from **Control › Firmware**.
+The app keeps itself up to date once it is installed. The GLYPH firmware (04.10.26) is inside it:
+the app installs it over USB-C with the access code that comes with your GLYPH, and GLYPH then
+updates itself over Wi-Fi from **Control › Firmware**.
 
 ### What's new
 
@@ -23,7 +22,7 @@ The app keeps itself up to date once it is installed, and GLYPH updates itself o
 - **Send to GLYPH** loads the route into the device's own memory, no card needed. The small card button saves it to the memory card only.
 
 **Setup**
-- **Install firmware over USB-C, straight from your phone**: the app's first screen. No computer, no internet.
+- **Install firmware over USB-C, straight from your phone**: the app's first screen, with your GLYPH access code. No computer, no internet.
 
 **Look and feel**
 - A cleaner Comms tab, a single "not connected" line in Control, the guided tour always on screen, and the map credits folded into a small **i**.
