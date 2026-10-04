@@ -10,7 +10,7 @@ No SIM card. No mobile signal. No servers.<br/>
 GLYPH units talk to each other over LoRa radio, and the phone app turns yours into a full map and chat screen.
 
 <p>
-  <a href="https://github.com/Mqr1oo/GLYPH/releases/latest"><img src="https://img.shields.io/github/v/release/Mqr1oo/GLYPH?style=for-the-badge&label=App&color=0A84FF" alt="Latest release"/></a>
+  <a href="https://github.com/Mqr1oo/GLYPH/releases/latest"><img src="https://img.shields.io/github/v/release/Mqr1oo/GLYPH?sort=semver&style=for-the-badge&label=App&color=0A84FF" alt="Latest release"/></a>
   <img src="https://img.shields.io/badge/Firmware-04.10.26-30D158?style=for-the-badge" alt="Firmware 04.10.26"/>
   <img src="https://img.shields.io/badge/Android-7%2B-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Android"/>
   <img src="https://img.shields.io/badge/ESP32--S3-LoRa_SX1262-E7352C?style=for-the-badge&logo=espressif&logoColor=white" alt="ESP32-S3 with LoRa"/>
