@@ -108,7 +108,7 @@ long conversations and settings. It works fully offline once it is installed.
   <img src="docs/images/app/usb-install.jpg" width="24%" alt="Installing firmware over a USB-C cable"/>
 </p>
 
-| | |
+| Tab | What it does |
 |---|---|
 | 🗺️ **Routes** | A **detailed dark map of the whole world**: streets, hiking trails, forest tracks, peaks with their height, rivers and huts. Plan routes on foot, by bike or by car (they avoid ferries and stay on land), or draw your own. Send a route to GLYPH's **internal memory** with one tap, or to its memory card. |
 | 📦 **Offline maps** | **Save area** keeps what you see on screen for use with no signal. **Save for this route** keeps a 2 km band along your route. Without signal you still get a world map with towns, forests and borders. |
@@ -149,13 +149,9 @@ notification. It has no account, no ads and no tracking. See the [privacy policy
 
 ## 🔗 How it works
 
-```mermaid
-flowchart LR
-    P1["📱 Your phone<br/>GLYPH app"] <-- Bluetooth --> G1["📟 Your GLYPH"]
-    G1 <-. "LoRa 868 / 915 MHz" .-> G2["📟 Teammate"]
-    G2 <-. "relay (mesh)" .-> G3["📟 Teammate further away"]
-    G3 <-- Bluetooth --> P3["📱 Their phone"]
-```
+<p align="center">
+  <img src="docs/images/how-it-works.svg" width="100%" alt="Your phone talks to your GLYPH over Bluetooth; GLYPH units talk to each other over LoRa and relay messages for one another; a teammate's phone connects to their GLYPH the same way"/>
+</p>
 
 - Messages travel over **LoRa**, a long-range, low-power radio. Range is **10 km and more with a clear line of sight**, less in forests and valleys.
 - Each message can be **relayed by up to 3 other units** (4 for an SOS), so the team stays in touch around ridges and buildings.
@@ -228,7 +224,7 @@ tuned for Bambu Lab printers with an AMS. Pick 868 MHz in Europe and 915 MHz in 
 
 GLYPH is a product in development, so the main code is not public. Here is what you get:
 
-| | |
+| | What |
 |---|---|
 | ✅ **Free to download and use** | The Android app and the firmware, in [Releases](https://github.com/Mqr1oo/GLYPH/releases) and on the [flasher](https://glyph.cinevacuceva256.workers.dev/flasher/) |
 | ✅ **Open** | This documentation, the parts list, and the **GLYPH Diagnostic** sketch in [`test firmware/`](test%20firmware/) that checks your modules after assembly (GPL-3.0) |
