@@ -1,0 +1,11 @@
+/* GLYPH Diagnostic installer: what Tailwind does not cover. */
+
+esp-web-install-button[supported="false"] { display: none; }
+
+#terminal::-webkit-scrollbar { width: 6px; }
+#terminal::-webkit-scrollbar-track { background: #050B14; }
+#terminal::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 3px; }
+
+.glow-button {
+    box-shadow: 0 0 25px -5px rgba(37, 99, 235, 0.6);
+}
