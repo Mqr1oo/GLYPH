@@ -1,0 +1,45 @@
+# Publishes a GitHub release from .github/release/: the files named in
+# release.json are downloaded from where they are built (the Android app
+# from Expo, the firmware from the GLYPH flasher), checked against their
+# SHA-256, and attached to the release, with notes.md as its text.
+# To publish a new version, edit those two files and push to main.
+name: Release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/release/**
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download and check the files
+        run: |
+          mkdir -p out
+          jq -c '.assets[]' .github/release/release.json | while read -r a; do
+            name=$(jq -r .name <<<"$a"); url=$(jq -r .url <<<"$a"); sum=$(jq -r .sha256 <<<"$a")
+            curl -fsSL --retry 3 -o "out/$name" "$url"
+            echo "$sum  out/$name" | sha256sum -c -
+          done
+          (cd out && sha256sum * > SHA256SUMS.txt)
+
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag=$(jq -r .tag .github/release/release.json)
+          title=$(jq -r .title .github/release/release.json)
+          if gh release view "$tag" >/dev/null 2>&1; then
+            gh release edit "$tag" --title "$title" --notes-file .github/release/notes.md --latest
+            gh release upload "$tag" out/* --clobber
+          else
+            gh release create "$tag" out/* --title "$title" --notes-file .github/release/notes.md --target "$GITHUB_SHA" --latest
+          fi

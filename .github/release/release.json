@@ -1,0 +1,16 @@
+{
+  "tag": "v1.3.0",
+  "title": "GLYPH 1.3 · firmware 04.10.26",
+  "assets": [
+    {
+      "name": "GLYPH-1.3.0.apk",
+      "url": "https://expo.dev/artifacts/eas/8Sq_32PNVL9ZCJOi0DxZin3IlVdHPTuYn2WgbB5cYvY.apk",
+      "sha256": "7521a44cd4c95b814a62d35ddcdaab688cbc23561584968589487a411b5fee61"
+    },
+    {
+      "name": "GLYPH-firmware-04.10.26.bin",
+      "url": "https://glyph.cinevacuceva256.workers.dev/flasher/firmware.bin",
+      "sha256": "3b52d9f2be4a63388050d0ee2d84c513e212585714c933645af064f5a2d5d8a1"
+    }
+  ]
+}
