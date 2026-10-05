@@ -1,6 +1,6 @@
 # Privacy
 
-**GLYPH app** · updated 4 October 2026
+**GLYPH app** · updated 5 October 2026
 
 ## The short version
 
@@ -34,13 +34,18 @@ Uninstalling the app or clearing its data removes all of it.
 - **OpenStreetMap Nominatim**, when a place is not a town in the list inside the app (a street, a peak,
   a hut), and the **OSRM** routing services (FOSSGIS for walking and cycling), when you ask for an
   automatic route. Only the text you typed or the two points are sent.
-- **Expo** (expo.dev), to check for and download app updates.
+- **Terrain Tiles** on AWS Open Data, for the heights of a route's area when you send it to GLYPH
+  with internet; the app turns them into the contour lines on GLYPH's map.
+- **Expo** (expo.dev), to check for and download app updates. The check sends the app's version,
+  the phone's system (Android) and a random number made when the app is installed, which is not
+  linked to you or your phone and is not shared with us.
 - **The GLYPH update server**, when you update GLYPH's firmware over Wi-Fi.
 
-These services receive your IP address like any website does. GLYPH sends them nothing else.
+These services receive your IP address like any website does. Apart from what is listed above, GLYPH
+sends them nothing.
 
 Map data © OpenStreetMap contributors (OpenFreeMap, OpenMapTiles, Protomaps); places © GeoNames
-(CC BY 4.0).
+(CC BY 4.0); heights: Terrain Tiles by Mapzen and others (SRTM, GMTED, NED, ETOPO1 and more).
 
 ## Notifications
 
