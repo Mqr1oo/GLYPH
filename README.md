@@ -215,7 +215,7 @@ tuned for Bambu Lab printers with an AMS. Pick 868 MHz in Europe and 915 MHz in 
 |---|---|
 | [`app/`](app/README.md) | 🔒 The Android app: download, features, permissions |
 | [`firmware/`](firmware/README.md) | 🔒 The firmware: how it is installed and updated, versions |
-| [`hardware/`](hardware/README.md) | Parts list, radio band, printing and assembly checks |
+| [`hardware/`](hardware/README.md) | Parts list, radio band, printing, assembly checks and the [build guide (PDF)](docs/GLYPH-build-guide.pdf) |
 | [`diagnostic/`](diagnostic/README.md) | ✅ Open-source sketch that tests every module after assembly |
 | [`docs/`](docs/guide.md) | The user guide, photos and screenshots |
 | [`CHANGELOG.md`](CHANGELOG.md) | What changed in each version |

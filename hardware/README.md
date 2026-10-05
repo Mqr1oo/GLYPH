@@ -1,7 +1,10 @@
 # 🛠️ GLYPH hardware
 
 GLYPH is built from standard modules that plug together with **Qwiic** cables, in a 3D-printed case.
-No soldering, no tools, about 30 minutes.
+No soldering: a small screwdriver, cutters and insulating tape are all you need.
+
+📘 **[Build guide (PDF)](../docs/GLYPH-build-guide.pdf)**: 16 illustrated steps, from printing the case to
+screwing on the antenna.
 
 <p align="center">
   <img src="../docs/images/qwiic.jpg" width="80%" alt="The parts of GLYPH laid out: case, lid, buttons cover, battery, radio board, GPS, IMU, sensor and buttons"/>
@@ -37,8 +40,10 @@ the same band.
 
 ## The case
 
-- Body in **PETG-CF**, button caps in **TPU**, printed on a Bambu Lab printer with an AMS.
-- The print files and the full kit will be published on **MakerWorld**.
+- Case and lid in **PETG-CF**, button cover in **TPU**, printed on a Bambu Lab printer with an AMS.
+- Print the small tester first: it checks how the LilyGO's antenna port fits, and tells you which of
+  the three case sizes to print (8.3, 8.48 or 8.66 mm). The build guide walks you through it.
+- The print files will be published on **MakerWorld**.
 
 ## Assembly checks
 
